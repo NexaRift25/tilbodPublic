@@ -11,7 +11,7 @@ export default function WeeklyOfferWraper() {
             <div className="flex justify-between items-center py-[2.3rem]">
                 <h2 className="text-5xl font-semibold text-smoky-white">Weekly Deals</h2>
                 <div className="theme-pink">
-                    <AnimatedLineButton />
+                    <AnimatedLineButton category="weekday deals" />
                 </div>
             </div>
             <ScrollableCarousel gap="gap-6" className="pr-0">

@@ -11,7 +11,7 @@ export default function HappyOfferWraper() {
             <div className="flex justify-between items-center py-[2.3rem]">
                 <h2 className="text-5xl font-semibold text-smoky-white">Happy Hour </h2>
                 <div className="theme-green">
-                    <AnimatedLineButton />
+                    <AnimatedLineButton category="happy hour" />
                 </div>
             </div>
             <ScrollableCarousel gap="gap-6" className="pr-0">

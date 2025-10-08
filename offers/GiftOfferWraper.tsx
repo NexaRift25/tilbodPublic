@@ -11,7 +11,7 @@ export default function GiftOfferWraper() {
             <div className="flex justify-between items-center py-[2.3rem]">
                 <h2 className="text-5xl font-semibold text-smoky-white">Gift Certificate</h2>
                 <div className="theme-orange">
-                    <AnimatedLineButton />
+                    <AnimatedLineButton category="gift certificate" />
                 </div>
             </div>
             <ScrollableCarousel gap="gap-6" className="pr-0">

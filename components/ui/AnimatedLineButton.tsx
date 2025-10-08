@@ -1,10 +1,10 @@
 import { MoveRight } from "lucide-react";
 
-const AnimatedLineButton = () => {
+const AnimatedLineButton = ({ category }: { category: string }) => {
     return (
         <div className="line_button relative flex cursor-pointer items-center gap-4 text-white transition-colors hover:text-primary xl:pr-[137px]">
             <div className="line_button_content text-sm font-semibold sm:text-2xl">
-                View all active offers
+                View all {category}
             </div>
 
             <MoveRight size={32} className='text-primary font-semibold' />

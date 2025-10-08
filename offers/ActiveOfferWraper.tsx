@@ -10,7 +10,7 @@ export default function ActiveOfferWraper() {
         <div className="w-full">
             <div className="flex justify-between items-center py-[2.3rem]">
                 <h2 className="text-5xl font-semibold text-smoky-white">Active Offers</h2>
-                <AnimatedLineButton />
+                <AnimatedLineButton category="active offers" />
             </div>
             <ScrollableCarousel gap="gap-6" className="pr-0">
                 {activeOfers.map((offer, index) => (
