@@ -4,17 +4,17 @@ import ScrollableCarousel from "@/components/ui/ScrollableCarousel";
 import { promoOffers } from "@/data/promoOffers";
 
 export default function PromoCardWraper() {
-    return (
-        <div className="w-full">
-            <FadeUpSection>
-                <ScrollableCarousel gap="gap-6" className="pr-0">
-                    {promoOffers.map((offer) => (
-                        <div key={offer.id} className="flex-shrink-0 snap-center">
-                            <PromoCard offer={offer} />
-                        </div>
-                    ))}
-                </ScrollableCarousel>
-            </FadeUpSection>
-        </div>
-    )
+  return (
+    <div className="w-full">
+      <FadeUpSection>
+        <ScrollableCarousel gap="gap-4 md:gap-6" className="pr-0">
+          {promoOffers.map((offer) => (
+            <div key={offer.id} className="flex-shrink-0 snap-center">
+              <PromoCard offer={offer} />
+            </div>
+          ))}
+        </ScrollableCarousel>
+      </FadeUpSection>
+    </div>
+  );
 }
