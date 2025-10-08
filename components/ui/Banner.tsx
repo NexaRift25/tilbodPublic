@@ -7,12 +7,18 @@ import Container from './Container'
 const Banner = ({ className }: { className: string }) => {
     return (
         <FadeUpSection>
-            <div className="bg-banner-background">
-                <Container className={cn(` max-w-[91.1875rem] px-[8.5625rem] py-[6.345rem]`)}>
+            <div className="bg-banner-background py-4 md:py-6 lg:py-8">
+                <Container className="w-full px-4 sm:px-6 lg:px-8">
                     <Image
                         src={bannerImage}
                         alt="Active Offers"
-                        className={cn(`mx-auto h-[19.875rem] w-full rounded-[1.91rem] md:rounded-[4.2675rem] border object-cover lg:h-[32.310625rem]`, className)}
+                        className={cn(
+                            "w-full h-auto rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[4.2675rem]",
+                            "border object-cover mx-auto",
+                            "max-w-full sm:max-w-[95%] md:max-w-[90%] lg:max-w-[118.75rem]",
+                            "max-h-[32.3125rem]",
+                            className
+                        )}
                     />
                 </Container>
             </div>

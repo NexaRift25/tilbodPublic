@@ -50,7 +50,7 @@ export default function ScrollableCarousel({
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
         >
-            <div className={`flex ${gap} pl-4 pr-[8.5625rem] py-4 snap-x snap-mandatory`}>
+            <div className={`flex ${gap} py-4 snap-x snap-mandatory`}>
                 {children}
             </div>
         </div>

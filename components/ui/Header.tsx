@@ -2,12 +2,7 @@ import { Search, User } from "lucide-react";
 import Container from "./Container";
 import Link from "next/link";
 export default function Header() {
-
-
-
-
-
-    return <header className="bg-banner-background border-b border-primary">
+    return <header className="bg-banner-background border-b border-primary px-4 sm:px-6 lg:px-8">
         <Container className="flex items-center justify-between">
             <div className="py-4 flex items-center gap-12">
                 <Logo />
