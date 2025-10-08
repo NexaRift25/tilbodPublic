@@ -9,7 +9,6 @@ export default function PublicPage({ children }: { children: React.ReactNode }) 
             <div>
                 <Header />
                 {children}
-
             </div>
         </div>
     )

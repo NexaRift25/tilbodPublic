@@ -58,7 +58,7 @@
   --card-foreground: oklch(0.217 0 0);
   --popover-foreground: oklch(0.217 0 0);
   --sidebar-foreground: oklch(0.217 0 0);
-  --primary:#FFEE00;
+  --primary: #FFEE00;
   --sidebar-primary: oklch(0.788 0.167 104);
   --primary-foreground: oklch(0.961 0 0);
   --sidebar-primary-foreground: oklch(0.961 0 0);
@@ -146,7 +146,7 @@
   --card-foreground: oklch(0.215 0 0);
   --popover-foreground: oklch(0.215 0 0);
   --sidebar-foreground: oklch(0.215 0 0);
-  --primary:#ED9AEA;
+  --primary: #ED9AEA;
   --sidebar-primary: oklch(0.629 0.267 330);
   --primary-foreground: oklch(0.961 0 0);
   --sidebar-primary-foreground: oklch(0.961 0 0);
@@ -191,7 +191,7 @@
   --card-foreground: oklch(0.217 0 0);
   --popover-foreground: oklch(0.217 0 0);
   --sidebar-foreground: oklch(0.217 0 0);
-  --primary:#10C278;
+  --primary: #10C278;
   --sidebar-primary: oklch(0.582 0.135 157);
   --primary-foreground: oklch(0.961 0 0);
   --sidebar-primary-foreground: oklch(0.961 0 0);
@@ -234,7 +234,7 @@
   --card-foreground: oklch(0.215 0 0);
   --popover-foreground: oklch(0.215 0 0);
   --sidebar-foreground: oklch(0.215 0 0);
-  --primary:#FF773C;
+  --primary: #FF773C;
   --sidebar-primary: oklch(0.668 0.224 37);
   --primary-foreground: oklch(0.961 0 0);
   --sidebar-primary-foreground: oklch(0.961 0 0);
@@ -279,6 +279,45 @@
     @apply bg-background text-foreground;
     font-family: var(--font-readex-pro), system-ui, -apple-system, sans-serif;
   }
+}
+
+
+/* Animated Button Css */
+.animated_button:hover .button_icon {
+  left: 10px;
+}
+
+.animated_button_content {
+  transition: 0.5s;
+}
+
+.animated_button:hover .animated_button_content {
+  margin-left: 20px;
+}
+
+.button_icon {
+  position: absolute;
+  left: -23px;
+  transition: left 0.5s ease;
+}
+
+.bottom_line {
+  transition: 0.5s;
+}
+
+.line_button_content {
+  transition: 0.5s;
+  /* position: relative; */
+}
+
+.line_button:hover .line_button_content {
+  /* padding-left: 5px; */
+  /* letter-spacing: 1px; */
+  transform: translateX(5px);
+}
+
+.line_button:hover .bottom_line {
+  width: 68%;
 }
 
 @layer utilities {

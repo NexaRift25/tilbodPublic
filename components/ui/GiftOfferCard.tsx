@@ -1,4 +1,5 @@
 import { MoveRight } from "lucide-react";
+import AnimatedButton from "./AnimatedButton";
 
 interface GiftOffer {
     id: number;
@@ -77,12 +78,7 @@ export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
                     {/* Action Buttons */}
                     <div className="absolute bottom-[1.5rem] left-[1.5rem] right-[1.5rem] flex flex-col gap-2">
                         {/* View Offer Button */}
-                        <a href={link} className="py-[0.6875rem] px-[1.5rem] rounded-[3.5rem] flex gap-[4.375rem] bg-card-background border border-primary text-smoky-white">
-                            <span className="text-sm font-semibold sm:text-base lg:text-2xl text-primary">
-                                View offer
-                            </span>
-                            <MoveRight size={32} className=" text-primary" />
-                        </a>
+                        <AnimatedButton />
                     </div>
                 </div>
             </div>

@@ -13,26 +13,22 @@ export default function Header() {
                     <Link href="/">Gift certificates</Link>
                 </nav>
             </div>
-            <div>
+            <div className="w-32 sm:w-48 md:w-56 lg:w-[300px] 2xl:w-[500px]">
                 {/* Search Bar */}
-                <div
-                    className={`group transition-all duration-300 flex-1  bg-general-background hover:bg-primary rounded-3xl `}
-                >
-                    <div
-                        className={`relative ml-auto flex items-center transition-all`}
-                    >
+                <div className="group transition-all duration-300 bg-general-background hover:bg-primary rounded-3xl">
+                    <div className="relative flex items-center">
                         <input
                             type="search"
                             placeholder="Search"
                             // onClick={openSearchPopup}
                             readOnly
-                            className="w-full border border-primary pl-8 pr-16 py-1 text-base text-white rounded-3xl !outline-none placeholder:text-white focus:border-primary focus:ring-0 cursor-pointer placeholder:font-semibold group-hover:placeholder:text-dark"
+                            className="w-full border border-primary px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-2 text-xs sm:text-sm lg:text-base text-white rounded-3xl bg-transparent outline-none placeholder:text-white focus:border-primary focus:ring-0 cursor-pointer placeholder:font-semibold group-hover:placeholder:text-dark transition-all"
                         />
                         <button
                             // onClick={openSearchPopup}
-                            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary group-hover:text-dark"
+                            className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-primary group-hover:text-dark transition-colors"
                         >
-                            <Search size={20} />
+                            <Search className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
                         </button>
                     </div>
                 </div>

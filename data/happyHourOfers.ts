@@ -18,7 +18,7 @@ export const happyHourOfers = [
         title: "Íslenski Barinn",
         time: "17:00 - 19:00",
         description: "Happy hour specials on local Icelandic beers and cocktails at discounted prices.",
-        image: "/home-section-5/source/islenski-barinn-bic9914-by-art-bicnick JPEG Image, 600 × 400.jpg",
+        image: "/home-section-5/source/Den Danske Kro, local bar in Reykjavík, Iceland - Tiny Iceland.jpg",
         status: "Open now",
         location: "Ingólfsstræti 1, Reykjavik",
         pricing: "700kr. beer / 1200kr. cocktails",
