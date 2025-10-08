@@ -9,7 +9,7 @@ const AnimatedLineButton = ({ category }: { category: string }) => {
 
             <MoveRight size={32} className='text-primary font-semibold' />
 
-            <div className="bottom_line absolute h-[3px] bottom-0 w-[40%] hover:w-fit bg-primary" />
+            <div className="bottom_line absolute h-[3px] bottom-[-8px] w-[40%] hover:w-fit bg-primary" />
         </div>
     );
 };
