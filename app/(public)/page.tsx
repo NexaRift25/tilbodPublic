@@ -7,6 +7,7 @@ import HappyOfferWraper from "@/offers/HappyOfferWraper";
 import GiftOfferWraper from "@/offers/GiftOfferWraper";
 import Footer from "@/components/ui/Footer";
 import Container from "@/components/ui/Container";
+import FadeUpSection from "@/components/ui/FadeUpSection";
 export default function HomePage() {
     return (
         <div className="">
@@ -17,18 +18,31 @@ export default function HomePage() {
             <div
                 className="w-full max-w-[118.75rem] mx-auto pl-4 sm:pl-6 lg:pl-8"
             >
-                <CategoryCardWraper />
+                <FadeUpSection>
+                    <CategoryCardWraper />
+                </FadeUpSection>
             </div>
             <div
                 className="w-full max-w-[118.75rem] mx-auto pl-4 sm:pl-6 lg:pl-8"
             >
-                <ActiveOfferWraper />
-                <WeeklyOfferWraper />
-                <HappyOfferWraper />
-                <GiftOfferWraper />
+                <FadeUpSection>
+                    <ActiveOfferWraper />
+                </FadeUpSection>
+                <FadeUpSection>
+                    <WeeklyOfferWraper />
+                </FadeUpSection>
+                <FadeUpSection>
+                    <HappyOfferWraper />
+                </FadeUpSection>
+                <FadeUpSection>
+                    <GiftOfferWraper />
+                </FadeUpSection>
+
             </div>
             <Container className="w-full max-w-[118.75rem] pl-8 pr-20 pb-[3.5rem]">
-                <Footer />
+                <FadeUpSection>
+                    <Footer />
+                </FadeUpSection>
             </Container>
         </div>
     )
