@@ -9,7 +9,7 @@ export const promoOffers = [
     },
     {
         id: 2,
-        title: "Samsung Galaxy S24",
+        title: "Samsung Galaxy",
         brand: "Electronics Store",
         discount: "30% discount",
         image: "/home-section-1/Rectangle 24.png",
@@ -29,14 +29,6 @@ export const promoOffers = [
         brand: "Tech Hub",
         discount: "15% discount",
         image: "/home-section-1/Rectangle 26.png",
-        link: "https://www.google.com",
-    },
-    {
-        id: 5,
-        title: "AirPods Pro",
-        brand: "Audio World",
-        discount: "35% discount",
-        image: "/home-section-1/Rectangle 27.png",
         link: "https://www.google.com",
     },
     {
