@@ -13,9 +13,9 @@ const Banner = ({ className }: { className: string }) => {
                         src={bannerImage}
                         alt="Active Offers"
                         className={cn(
-                            "w-full h-auto rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[4.2675rem]",
+                            "w-full h-auto rounded-[1.90rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[4.2675rem]",
                             "border object-cover mx-auto",
-                            "max-w-full sm:max-w-[95%] md:max-w-[90%] lg:max-w-[118.75rem]",
+                            "max-w-full min-h-[19.875rem] sm:max-w-[95%] md:max-w-[90%] lg:max-w-[118.75rem]",
                             "max-h-[32.3125rem]",
                             className
                         )}

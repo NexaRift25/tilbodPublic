@@ -21,7 +21,7 @@ export default function PromoCard({ offer }: PromoCardProps) {
   const { title, brand, discount, image, link } = offer;
 
   return (
-    <div className="relative min-w-[283px] lg:w-[26.6875rem] h-[31.25rem] sm:h-[37.5rem] lg:h-[40.625rem] 2xl:h-[45.75rem] bg-card-background text-smoky-white rounded-3xl border border-primary overflow-hidden">
+    <div className="relative min-w-[17.6875rem] lg:w-[26.6875rem] h-[31.25rem] sm:h-[37.5rem] lg:h-[40.625rem] 2xl:h-[45.75rem] bg-card-background text-smoky-white rounded-3xl border border-primary overflow-hidden">
       {/* Product Image */}
       <div className="relative w-full h-full">
         <Image
@@ -34,7 +34,7 @@ export default function PromoCard({ offer }: PromoCardProps) {
         />
 
         {/* Discount Card - Always 24px from bottom, left, and right */}
-        <div className="whitespace-nowrap overflow-hidden min-w-[251px] min-h-[180px] absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-6 lg:right-6 bg-card-background rounded-4xl border border-primary shadow-md p-2.5 md:p-4 lg:p-4 flex flex-col items-start">
+        <div className="whitespace-nowrap overflow-hidden min-w-[15.6875rem] min-h-[11.25rem] absolute bottom-[1rem] left-[1rem] right-[1rem] lg:bottom-[1.5rem] lg:left-[1.5rem] lg:right-[1.5rem] bg-card-background rounded-4xl border border-primary shadow-md p-[0.625rem] md:p-[1rem] lg:p-[1rem] flex flex-col items-start">
           <div className="bg-primary text-dark text-center font-semibold rounded-full py-2 px-2 lg:py-2 lg:px-4 w-full mb-2 text-2xl lg:text-[1.75rem]">
             {discount}
           </div>
