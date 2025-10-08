@@ -11,7 +11,7 @@ import FadeUpSection from "@/components/ui/FadeUpSection";
 export default function HomePage() {
     return (
         <div className="">
-            <div className='pt-[2.5rem] pb-[7.5rem]'>
+            <div className='pt-[2.5rem] pb-[4.375rem] lg:pb-[7.5rem]'>
                 <PromotionOffer />
             </div>
             <Banner className="border-primary" />

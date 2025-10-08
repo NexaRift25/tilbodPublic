@@ -21,7 +21,7 @@ export default function HappyOfferWraper() {
                             <HappyHourOfferCard offer={offer} />
                         </div>
                         {(index + 1) % 4 === 0 && (
-                            <AdCard />
+                            <AdCard variant="happy-hour" />
                         )}
                     </Fragment>
                 ))}

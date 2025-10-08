@@ -1,17 +1,65 @@
 import Image from "next/image";
 import adCardImage from "@/images/ad.png";
 
-export default function AdCard() {
-    return (
-        <div className="flex-shrink-0 snap-center w-[25.625rem] h-[38.75rem] rounded-[1rem] lg:rounded-[2.5rem] p-4 border border-primary">
-            <div className="h-full w-full">
-                <Image 
-                    src={adCardImage} 
-                    alt="AdCard" 
-                    className="h-full w-full object-cover rounded-[1rem] lg:rounded-[2.5rem] pointer-events-none select-none" 
-                    draggable={false}
-                />
-            </div>
-        </div>
-    )
+interface AdCardProps {
+  variant?:
+    | "active-offer"
+    | "happy-hour"
+    | "promo"
+    | "gift-card"
+    | "weekly-offer";
+  className?: string;
+}
+
+export default function AdCard({
+  variant = "active-offer",
+  className = "",
+}: AdCardProps) {
+  // Define dimensions and styles for different variants
+  const variants = {
+    "active-offer": {
+      container: "w-[17.625rem] h-[30rem] md:w-[25.625rem] md:h-[38.75rem]",
+      rounded: "rounded-[2.5rem]",
+      padding: "p-4",
+    },
+    "happy-hour": {
+      container: "w-[25.625rem] h-[39.0625rem]",
+      rounded: "rounded-[1rem] sm:rounded-[2.5rem]",
+      padding: "p-4",
+    },
+    promo: {
+      container:
+        "min-w-[17.6875rem] lg:w-[26.6875rem] h-[31.25rem] sm:h-[37.5rem] lg:h-[40.625rem] 2xl:h-[45.75rem]",
+      rounded: "rounded-3xl",
+      padding: "p-4",
+    },
+    "gift-card": {
+      container: "w-[25.625rem] h-[38.75rem]",
+      rounded: "rounded-[1rem] lg:rounded-[2.5rem]",
+      padding: "p-4",
+    },
+    "weekly-offer": {
+      container: "w-[25.625rem] h-[38.75rem]",
+      rounded: "rounded-[1rem] lg:rounded-[2.5rem]",
+      padding: "p-4",
+    },
+  };
+
+  const currentVariant = variants[variant];
+
+  return (
+    <div
+      className={`flex-shrink-0 snap-center ${currentVariant.container} ${currentVariant.rounded} ${currentVariant.padding} border border-primary bg-card-background ${className}`}
+    >
+      <div className="h-full w-full relative overflow-hidden">
+        <Image
+          src={adCardImage}
+          alt="AdCard"
+          className="h-full w-full object-cover rounded-[1rem] lg:rounded-[2.5rem] pointer-events-none select-none"
+          draggable={false}
+          fill
+        />
+      </div>
+    </div>
+  );
 }

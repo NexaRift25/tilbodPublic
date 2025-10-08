@@ -21,7 +21,7 @@ export default function GiftOfferWraper() {
                             <GiftOfferCard offer={offer} />
                         </div>
                         {(index + 1) % 4 === 0 && (
-                            <AdCard />
+                            <AdCard variant="gift-card" />
                         )}
                     </Fragment>
                 ))}

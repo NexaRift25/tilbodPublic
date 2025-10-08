@@ -22,7 +22,7 @@ export default function WeeklyOfferWraper() {
                             <WeeklyOfferCard offer={offer} />
                         </div>
                         {(index + 1) % 4 === 0 && (
-                            <AdCard />
+                            <AdCard variant="weekly-offer" />
                         )}
                     </Fragment>
                 ))}
