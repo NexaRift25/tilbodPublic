@@ -19,7 +19,7 @@ interface GiftOfferCardProps {
 
 export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
     const { title, price, description, image, category, timeLeft, purchaseCount, link } = offer;
-    
+
     return (
         <div className="theme-orange">
             <div className="w-[25.625rem] h-[39.0625rem] relative overflow-hidden rounded-[1rem] border border-primary sm:rounded-[2.5rem] bg-card-background">
@@ -56,7 +56,7 @@ export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4">
+                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
                                 {title}
                             </h3>
                         </div>
@@ -65,9 +65,13 @@ export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
                         <p className="h-[8.2rem] w-full text-base text-smoky-white pt-4 font-medium">
                             {description}
                         </p>
-                        <div className='text-smoky-white text-base font-medium'>
-                            <p>{purchaseCount} have taken advantage of the offer</p>
-                        </div>
+
+                    </div>
+
+
+                    {/* Purchase Count - Absolute positioned */}
+                    <div className="absolute bottom-[98px] left-[1.5rem] right-[1.5rem] text-smoky-white text-base font-medium">
+                        <p>{purchaseCount} have taken advantage of the offer</p>
                     </div>
 
                     {/* Action Buttons */}

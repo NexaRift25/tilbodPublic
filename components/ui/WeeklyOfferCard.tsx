@@ -21,7 +21,7 @@ interface WeeklyOfferCardProps {
 export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
     const { title, discount, description, image, badge, location, time, availableDays, link } = offer;
     const allDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    
+
     return (
         <div className="theme-pink">
             <div className="w-[25.625rem] h-[39.0625rem] relative overflow-hidden rounded-[1rem] border border-primary sm:rounded-[2.5rem] bg-card-background">
@@ -53,7 +53,7 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
                     <div className="pointer-events-none flex-1">
                         <div className=" border-b border-primary">
                             {/* Title */}
-                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4">
+                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
                                 {title}
                             </h3>
                         </div>
@@ -67,21 +67,20 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
                         <p className="h-[9.99rem] w-full text-base text-smoky-white font-medium">
                             {description}
                         </p>
-                        <div className='text-yellow text-2xl font-medium'>
-                            {time}
-                        </div>
-                    </div>
 
+                    </div>
+                    <div className='absolute bottom-[4rem] left-[1.5rem] right-[1.5rem] text-yellow text-2xl font-medium'>
+                        {time}
+                    </div>
                     {/* Action Buttons */}
                     <div className="absolute bottom-[1.5rem] left-[1.5rem] right-[1.5rem] flex flex-col gap-2">
                         {/* Available Days */}
                         <div className="grid grid-cols-7 gap-2 text-xs font-semibold">
                             {allDays.map((day) => (
-                                <div 
+                                <div
                                     key={day}
-                                    className={`flex items-center justify-center h-[23px] w-[48.29px] rounded-sm ${
-                                        availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
-                                    }`}
+                                    className={`flex items-center justify-center h-[23px] w-[48.29px] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
+                                        }`}
                                 >
                                     <p>{day}</p>
                                 </div>

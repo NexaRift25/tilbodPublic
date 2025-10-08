@@ -55,7 +55,7 @@ export default function HappyHourOfferCard({ offer }: HappyHourOfferCardProps) {
                     <div className="pointer-events-none flex-1">
                         <div className=" border-b border-primary">
                             {/* Title */}
-                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4">
+                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
                                 {title}
                             </h3>
                         </div>

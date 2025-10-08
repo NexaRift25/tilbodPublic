@@ -54,7 +54,7 @@ export default function ActiveOfferCard({ offer }: ActiveOfferCardProps) {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4">
+                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
                                 {title}
                             </h3>
                         </div>
