@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface HappyHourOffer {
     id: number;
@@ -16,15 +17,19 @@ interface HappyHourOffer {
 
 interface HappyHourOfferCardProps {
     offer: HappyHourOffer;
+    className?: string;
 }
 
-export default function HappyHourOfferCard({ offer }: HappyHourOfferCardProps) {
+export default function HappyHourOfferCard({ offer, className }: HappyHourOfferCardProps) {
     const { title, time, description, image, status, location, pricing, availableDays, link } = offer;
     const allDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     
     return (
         <div className="theme-green">
-            <div className="min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
+            <div className={cn(
+                "w-full min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto",
+                className
+            )}>
                 {/* Time Banner */}
                 <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
                     <span className="text-xl md:text-[1.75rem] font-semibold text-dark truncate">

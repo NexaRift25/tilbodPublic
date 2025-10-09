@@ -61,7 +61,7 @@ export default function Header() {
               <nav className="flex items-center gap-3 xl:gap-12 text-smoky-white font-semibold">
                 <Link href="/active-offers">Active 0ffers</Link>
                 <Link href="/weekday-specials">Weekday specials</Link>
-                <Link href="/happy-hours">Happy hours</Link>
+                <Link href="/happy-hour-offers">Happy hours</Link>
                 <Link href="/gift-certificates">Gift certificates</Link>
               </nav>
             </div>
