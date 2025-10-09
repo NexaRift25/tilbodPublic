@@ -3,10 +3,16 @@ import AdCard from "@/components/ui/AdCard";
 import AnimatedLineButton from "@/components/ui/AnimatedLineButton";
 import ScrollableCarousel from "@/components/ui/ScrollableCarousel";
 import { activeOfers } from "@/data/activeOfers";
-import { div } from "framer-motion/client";
-import { Fragment } from "react";
+import { injectAds, isAdPlaceholder } from "@/utils/injectAds";
 
 export default function ActiveOfferWraper() {
+  // Inject ads after every 4th item (positions 3, 7, 11, etc.)
+  const adPositions = Array.from(
+    { length: Math.floor(activeOfers.length / 4) },
+    (_, i) => (i + 1) * 4 - 1
+  );
+  const itemsWithAds = injectAds(activeOfers, adPositions);
+
   return (
     <div className="w-full">
       <div className="flex justify-between items-center lg:py-[2.3rem] py-[1rem]">
@@ -18,14 +24,28 @@ export default function ActiveOfferWraper() {
         </div>
       </div>
       <ScrollableCarousel gap=" gap-4 md:gap-6" className="pr-0">
-        {activeOfers.map((offer, index) => (
-          <Fragment key={offer.id}>
-            <div className="flex-shrink-0 snap-center">
-              <ActiveOfferCard offer={offer} className="max-w-[25.625rem] min-w-[282px] w-[282px] md:w-[300px] lg:w-[400px] xl:w-[410px]" />
+        {itemsWithAds.map((item, index) => {
+          // Render ad card
+          if (isAdPlaceholder(item)) {
+            return (
+              <AdCard 
+                key={`ad-${index}`} 
+                variant="active-offer"
+                className="flex-shrink-0 snap-center w-[17.625rem] md:w-[18.75rem] lg:w-[25rem] xl:w-[25.625rem]"
+              />
+            );
+          }
+
+          // Render offer card
+          return (
+            <div key={item.id} className="flex-shrink-0 snap-center">
+              <ActiveOfferCard 
+                offer={item} 
+                className="max-w-[25.625rem] min-w-[17.625rem] w-[17.625rem] md:w-[18.75rem] lg:w-[25rem] xl:w-[25.625rem]" 
+              />
             </div>
-            {(index + 1) % 4 === 0 && <AdCard variant="active-offer" />}
-          </Fragment>
-        ))}
+          );
+        })}
       </ScrollableCarousel>
       <div className="block md:hidden">
         <AnimatedLineButton category="active offers" />

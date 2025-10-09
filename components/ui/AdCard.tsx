@@ -19,7 +19,7 @@ export default function AdCard({
   const variants = {
     "active-offer": {
       container:
-        "w-[282px] md:w-[300px] lg:w-[400px] xl:w-[410px] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
+        "min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
@@ -53,7 +53,7 @@ export default function AdCard({
 
   return (
     <div
-      className={`flex-shrink-0 snap-center ${currentVariant.container} ${currentVariant.rounded} ${currentVariant.padding} border border-primary bg-card-background ${className}`}
+      className={`${currentVariant.container} ${currentVariant.rounded} ${currentVariant.padding} border border-primary bg-card-background mx-auto ${className}`}
     >
       <div className="h-full w-full relative overflow-hidden">
         <Image
