@@ -55,12 +55,14 @@ export default function Header() {
         <div className="hidden lg:block px-4 sm:px-6 lg:px-8">
           <Container className="flex items-center justify-between">
             <div className="py-4 flex items-center gap-6 xl:gap-12">
-              <Logo />
+              <Link href="/">
+                <Logo />
+              </Link>
               <nav className="flex items-center gap-3 xl:gap-12 text-smoky-white font-semibold">
-                <Link href="/">Active 0ffers</Link>
-                <Link href="/">Weekday specials</Link>
-                <Link href="/">Happy hours</Link>
-                <Link href="/">Gift certificates</Link>
+                <Link href="/active-offers">Active 0ffers</Link>
+                <Link href="/weekday-specials">Weekday specials</Link>
+                <Link href="/happy-hours">Happy hours</Link>
+                <Link href="/gift-certificates">Gift certificates</Link>
               </nav>
             </div>
             <div className="w-32 sm:w-48 md:w-56 xl:w-[18.75rem] 2xl:w-[31.25rem]">

@@ -6,6 +6,8 @@ const readexPro = Readex_Pro({
   variable: "--font-readex-pro",
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
+  display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
 });
 
 export const metadata: Metadata = {

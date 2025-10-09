@@ -21,7 +21,7 @@ export default function ActiveOfferWraper() {
         {activeOfers.map((offer, index) => (
           <Fragment key={offer.id}>
             <div className="flex-shrink-0 snap-center">
-              <ActiveOfferCard offer={offer} />
+              <ActiveOfferCard offer={offer} className="max-w-[25.625rem] min-w-[282px] w-[282px] md:w-[300px] lg:w-[400px] xl:w-[410px]" />
             </div>
             {(index + 1) % 4 === 0 && <AdCard variant="active-offer" />}
           </Fragment>

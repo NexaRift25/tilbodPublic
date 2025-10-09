@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import AnimatedButton from "./AnimatedButton";
 
 interface Offer {
@@ -15,13 +16,22 @@ interface Offer {
 
 interface ActiveOfferCardProps {
   offer: Offer;
+  className?: string;
 }
 
-export default function ActiveOfferCard({ offer }: ActiveOfferCardProps) {
+export default function ActiveOfferCard({
+  offer,
+  className,
+}: ActiveOfferCardProps) {
   const { title, discount, description, image, category, timeLeft, link } =
     offer;
   return (
-    <div className="min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] sm:w-[22rem] sm:h-[33rem] md:w-[25.625rem] md:h-[38.75rem] relative overflow-hidden rounded-[2.5rem] border border-primary sm:rounded-[2.5rem] bg-card-background">
+    <div
+      className={cn(
+        "w-full min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden rounded-[2.5rem] border border-primary sm:rounded-[2.5rem] bg-card-background mx-auto",
+        className
+      )}
+    >
       {/* Discount Banner */}
       <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[3rem] md:h-[3.5rem] w-auto bg-offer-banner">
         <span className="text-xl md:text-[1.75rem] font-semibold text-dark">

@@ -203,4 +203,16 @@ export const activeOfers = [
         location: "Hotel Husafell",
         link: "https://www.google.com",
     },
+    {
+        id: 18,
+        offerType: "active_offfer",
+        title: "Discount on all products",
+        discount: "30% discount",
+        description: "All products are 30% off! Kulda products help you recover faster ✨💪",
+        image: "/home-section-3/source/259_3ddf559d-dac8-4b76-a2d4-5c51428116d7-thumbnail-1080x1080-70.jpg",
+        category: "Cold",
+        timeLeft: "1 day left",
+        location: "Hotel Husafell",
+        link: "https://www.google.com",
+    }
 ]
