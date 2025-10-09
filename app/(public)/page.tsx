@@ -39,7 +39,7 @@ export default function HomePage() {
                 </FadeUpSection>
 
             </div>
-            <Container className="w-full max-w-[118.75rem] pl-8 pr-20 pb-[3.5rem]">
+            <Container className="w-full max-w-[118.75rem] px-4 lg:pl-8 lg:pr-20 pb-[3.5rem]">
                 <FadeUpSection>
                     <Footer />
                 </FadeUpSection>
