@@ -37,7 +37,7 @@ export default function AdCard({
     },
     "gift-card": {
       container:
-        "min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem]",
+        "min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },

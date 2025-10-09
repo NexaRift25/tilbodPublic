@@ -1,5 +1,6 @@
 import { MoveRight } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
+import { cn } from "@/lib/utils";
 
 interface GiftOffer {
   id: number;
@@ -16,9 +17,10 @@ interface GiftOffer {
 
 interface GiftOfferCardProps {
   offer: GiftOffer;
+  className?: string;
 }
 
-export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
+export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) {
   const {
     title,
     price,
@@ -32,7 +34,10 @@ export default function GiftOfferCard({ offer }: GiftOfferCardProps) {
 
   return (
     <div className="theme-orange">
-      <div className="min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
+      <div className={cn(
+        "w-full min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto",
+        className
+      )}>
         {/* Price Banner */}
         <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
           <span className="text-xl md:text-[1.75rem] font-semibold text-dark truncate">
