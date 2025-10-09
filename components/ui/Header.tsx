@@ -130,7 +130,7 @@ export default function Header() {
             </div>
 
             {/* Menu Content */}
-            <div className="flex flex-col px-14 py-10 h-[calc(100vh-70px)]">
+            <div className="flex flex-col px-14 py-10 ">
               {/* Main Navigation Links */}
               <nav className="flex-1 space-y-12">
                 <MenuLinkButton nav={{ title: "Virk tilboð", link: "/" }} />
@@ -143,25 +143,25 @@ export default function Header() {
               </nav>
 
               {/* Bottom Utility Links */}
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-22">
                 <Link
                   href="/"
                   onClick={closeMenu}
-                  className="block text-smoky-white text-sm hover:text-yellow-400 transition-colors"
+                  className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
                   Skilmálar
                 </Link>
                 <Link
                   href="/"
                   onClick={closeMenu}
-                  className="block text-smoky-white text-sm hover:text-yellow-400 transition-colors"
+                  className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
                   Persónuvernd
                 </Link>
                 <Link
                   href="/"
                   onClick={closeMenu}
-                  className="block text-smoky-white text-sm hover:text-yellow-400 transition-colors"
+                  className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
                   Um okkur
                 </Link>
