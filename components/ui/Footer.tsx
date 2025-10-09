@@ -7,7 +7,7 @@ import Container from './Container'
 const Footer: React.FC = () => {
 
     return (
-        <Container className="w-full max-w-[118.75rem]">
+        <Container className="max-w-[118.75rem] w-[85%]">
             <footer
                 className="my-4 p-8 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background"
             >

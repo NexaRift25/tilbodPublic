@@ -8,7 +8,7 @@ const Banner = ({ className }: { className: string }) => {
     return (
         <FadeUpSection>
             <div className="bg-banner-background py-[1rem] md:py-[1.5rem] lg:py-[6.3125rem]">
-                <Container className="w-full px-4 sm:px-6 lg:px-8">
+                <Container className="max-w-[108.75rem] w-[90%] px-4 sm:px-6 lg:px-8">
                     <Image
                         src={bannerImage}
                         alt="Active Offers"
