@@ -17,7 +17,7 @@ export default function GiftOfferWraper() {
                 </div>
             </div>
 
-            <ScrollableCarousel gap="gap-4 md:gap-6" className="pr-0">
+            <ScrollableCarousel gap="gap-4 md:gap-6" className="pr-0 theme-orange">
                 {giftOfers.map((offer, index) => (
                     <Fragment key={offer.id}>
                         <div className="">

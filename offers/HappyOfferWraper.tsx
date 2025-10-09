@@ -17,7 +17,7 @@ export default function HappyOfferWraper() {
                 </div>
             </div>
 
-            <ScrollableCarousel gap="gap-4 md:gap-6" className="pr-0">
+            <ScrollableCarousel gap="gap-4 md:gap-6" className="pr-0 theme-green">
                 {happyHourOfers.map((offer, index) => (
                     <Fragment key={offer.id}>
                         <div className="">
