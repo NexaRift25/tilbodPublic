@@ -16,7 +16,7 @@ export default function HomePage() {
       </div>
       <Banner className="border-primary" />
 
-      <div className="w-full max-w-[118.75rem] mx-auto lg:pl-[137px]">
+      <div className="w-full max-w-[118.75rem] mx-auto pl-8 sm:pl-12 lg:pl-24 xl:pl-[137px]">
         <FadeUpSection>
           <CategoryCardWraper />
         </FadeUpSection>
