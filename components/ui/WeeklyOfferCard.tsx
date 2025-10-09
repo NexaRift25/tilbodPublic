@@ -24,7 +24,7 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
 
     return (
         <div className="theme-pink">
-            <div className="min-w-[282px] min-h-[480px] w-[282px] h-[480px] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
+            <div className="min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
                 {/* Discount Banner */}
                 <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
                     <span className="text-xl md:text-[1.75rem] font-semibold text-dark truncate">
@@ -40,7 +40,7 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
                         className="pointer-events-none relative z-10 select-none object-cover w-full h-full"
                     />
                     {/* Badge Indicator */}
-                    <div className="min-w-[236px] text-center absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
+                    <div className="min-w-[14.75rem] text-center absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
                         <div className="whitespace-nowrap rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary truncate">
                             {badge}
                         </div>
@@ -79,7 +79,7 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
                             {allDays.map((day) => (
                                 <div
                                     key={day}
-                                    className={`flex items-center justify-center m-h-[23px] m-w-[32.29px] lg:h-[23px] lg:w-[48.29px] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
+                                    className={`flex items-center justify-center m-h-[1.4375rem] m-w-[2.018rem] lg:h-[1.4375rem] lg:w-[3.018rem] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
                                         }`}
                                 >
                                     <p>{day}</p>
