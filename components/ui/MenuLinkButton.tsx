@@ -20,7 +20,7 @@ export default function MenuLinkButton({
           className="w-fit object-cover"
         />
 
-        <div className="bottom_line absolute h-[3px] bottom-[-8px] w-[32%] md:w-[40%] hover:w-fit bg-primary" />
+        <div className="bottom_line absolute h-[3px] bottom-[-8px] w-[45%] bg-primary" />
       </div>
     </div>
   );
