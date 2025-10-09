@@ -105,7 +105,7 @@ export default function Header() {
             transition={{
               type: "spring",
               stiffness: 300,
-              damping: 30,
+              damping: 50,
               duration: 0.3,
             }}
             className="fixed inset-0 z-50 bg-banner-background lg:hidden"
