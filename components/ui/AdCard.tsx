@@ -18,7 +18,8 @@ export default function AdCard({
   // Define dimensions and styles for different variants
   const variants = {
     "active-offer": {
-      container: "w-[17.625rem] h-[30rem] md:w-[25.625rem] md:h-[38.75rem]",
+      container:
+        "w-[17.625rem] h-[30rem] sm:h-[33rem] sm:w-[22rem] md:w-[25.625rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
@@ -39,8 +40,9 @@ export default function AdCard({
       padding: "p-4",
     },
     "weekly-offer": {
-      container: "w-[25.625rem] h-[38.75rem]",
-      rounded: "rounded-[1rem] lg:rounded-[2.5rem]",
+      container:
+        "min-w-[17.625rem] min-h-[30rem] w-[17.625rem] h-[30rem] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem]",
+      rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
   };

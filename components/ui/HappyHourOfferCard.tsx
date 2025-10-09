@@ -24,10 +24,10 @@ export default function HappyHourOfferCard({ offer }: HappyHourOfferCardProps) {
     
     return (
         <div className="theme-green">
-            <div className="w-[25.625rem] h-[39.0625rem] relative overflow-hidden rounded-[1rem] border border-primary sm:rounded-[2.5rem] bg-card-background">
+            <div className="min-w-[282px] min-h-[480px] w-[282px] h-[480px] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
                 {/* Time Banner */}
                 <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto">
-                    <span className="text-[1.75rem] font-semibold text-dark">
+                    <span className="text-xl md:text-[1.75rem] font-semibold text-dark">
                         {time}
                     </span>
                 </div>
@@ -69,7 +69,7 @@ export default function HappyHourOfferCard({ offer }: HappyHourOfferCardProps) {
                         <p className="h-[9.99rem] w-full text-base text-smoky-white font-medium">
                             {description}
                         </p>
-                        <div className='text-yellow text-2xl font-medium'>
+                        <div className='text-yellow text-lg md:text-2xl font-medium'>
                             <p>{pricing}</p>
                         </div>
                     </div>

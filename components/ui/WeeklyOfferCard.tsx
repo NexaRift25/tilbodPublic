@@ -24,10 +24,10 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
 
     return (
         <div className="theme-pink">
-            <div className="w-[25.625rem] h-[39.0625rem] relative overflow-hidden rounded-[1rem] border border-primary sm:rounded-[2.5rem] bg-card-background">
+            <div className="min-w-[282px] min-h-[480px] w-[282px] h-[480px] md:w-[23rem] md:h-[38rem] lg:w-[25.625rem] lg:h-[39.0625rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background">
                 {/* Discount Banner */}
                 <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
-                    <span className="text-[1.75rem] font-semibold text-dark">
+                    <span className="text-xl md:text-[1.75rem] font-semibold text-dark truncate">
                         {discount}
                     </span>
                 </div>
@@ -40,46 +40,46 @@ export default function WeeklyOfferCard({ offer }: WeeklyOfferCardProps) {
                         className="pointer-events-none relative z-10 select-none object-cover w-full h-full"
                     />
                     {/* Badge Indicator */}
-                    <div className="absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
-                        <div className="whitespace-nowrap rounded-t-3xl  text-xs shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary">
+                    <div className="min-w-[236px] text-center absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
+                        <div className="whitespace-nowrap rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary truncate">
                             {badge}
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Content Overlay */}
-                <div className="z-30 p-[1.5rem] flex flex-col justify-between sm:rounded-b-3xl bg-card-background">
+                <div className="z-30 p-[1rem] md:p-[1.5rem] flex flex-col justify-between sm:rounded-b-3xl bg-card-background">
                     {/* Content Section */}
                     <div className="pointer-events-none flex-1">
                         <div className=" border-b border-primary">
                             {/* Title */}
-                            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
+                            <h3 className="text-lg font-bold lg:text-2xl text-smoky-white mb-2 lg:mb-4 truncate">
                                 {title}
                             </h3>
                         </div>
 
                         {/* Location */}
-                        <div className="flex gap-1 py-4 text-xs font-semibold sm:text-base text-yellow">
+                        <div className="flex items-center gap-1.5 py-2 md:py-4 text-sm font-semibold sm:text-base text-yellow truncate">
                             <MapPin />  {location}
                         </div>
 
                         {/* Description */}
-                        <p className="h-[9.99rem] w-full text-base text-smoky-white font-medium">
+                        <p className="h-[9.99rem] w-full text-sm md:text-base text-smoky-white font-medium">
                             {description}
                         </p>
 
                     </div>
-                    <div className='absolute bottom-[4rem] left-[1.5rem] right-[1.5rem] text-yellow text-2xl font-medium'>
+                    <div className='absolute bottom-[3.50rem] md:bottom-[4rem] left-[1.5rem] right-[1.5rem] text-yellow text-lg md:text-2xl font-medium'>
                         {time}
                     </div>
                     {/* Action Buttons */}
                     <div className="absolute bottom-[1.5rem] left-[1.5rem] right-[1.5rem] flex flex-col gap-2">
                         {/* Available Days */}
-                        <div className="grid grid-cols-7 gap-2 text-xs font-semibold">
+                        <div className="grid grid-cols-7 gap-1 md:gap-2 text-xs font-semibold">
                             {allDays.map((day) => (
                                 <div
                                     key={day}
-                                    className={`flex items-center justify-center h-[23px] w-[48.29px] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
+                                    className={`flex items-center justify-center m-h-[23px] m-w-[32.29px] lg:h-[23px] lg:w-[48.29px] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
                                         }`}
                                 >
                                     <p>{day}</p>
