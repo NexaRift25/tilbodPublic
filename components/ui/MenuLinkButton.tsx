@@ -7,7 +7,7 @@ export default function MenuLinkButton({
 }) {
   return (
     <div>
-      <div className="line_button relative flex cursor-pointer items-center gap-6 text-white transition-colors hover:text-primary xl:pr-[137px]">
+      <div className="line_button relative flex cursor-pointer items-center gap-6 text-white transition-colors hover:text-primary xl:pr-[8.5625rem]">
         <div className="line_button_content font-semibold text-base">
           {nav.title}
         </div>
@@ -20,7 +20,7 @@ export default function MenuLinkButton({
           className="w-fit object-cover"
         />
 
-        <div className="bottom_line absolute h-[3px] bottom-[-8px] w-[45%] sm:w-[20%] bg-primary" />
+        <div className="bottom_line absolute h-[0.1875rem] bottom-[-0.5rem] w-[45%] sm:w-[20%] bg-primary" />
       </div>
     </div>
   );

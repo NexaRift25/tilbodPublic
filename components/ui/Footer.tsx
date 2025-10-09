@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                                 </div>
                             </div>
                             <button
-                                className="whitespace-nowrap lg:ml-1 lg:max-w-[144px] bg-primary rounded-b-[1.25rem] lg:rounded-r-full lg:rounded-l-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 text-sm sm:text-base font-medium text-dark transition-colors hover:opacity-90 lg:w-[28rem]"
+                                className="whitespace-nowrap lg:ml-1 lg:max-w-[9rem] bg-primary rounded-b-[1.25rem] lg:rounded-r-full lg:rounded-l-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 text-sm sm:text-base font-medium text-dark transition-colors hover:opacity-90 lg:w-[28rem]"
                             >
                                 Register me
                             </button>

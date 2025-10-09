@@ -54,16 +54,16 @@ export default function Header() {
         {/* Desktop Header (lg and above) */}
         <div className="hidden lg:block px-4 sm:px-6 lg:px-8">
           <Container className="flex items-center justify-between">
-            <div className="py-4 flex items-center gap-12">
+            <div className="py-4 flex items-center gap-6 xl:gap-12">
               <Logo />
-              <nav className="flex items-center gap-12 text-smoky-white font-semibold">
+              <nav className="flex items-center gap-3 xl:gap-12 text-smoky-white font-semibold">
                 <Link href="/">Active 0ffers</Link>
                 <Link href="/">Weekday specials</Link>
                 <Link href="/">Happy hours</Link>
                 <Link href="/">Gift certificates</Link>
               </nav>
             </div>
-            <div className="w-32 sm:w-48 md:w-56 lg:w-[300px] 2xl:w-[500px]">
+            <div className="w-32 sm:w-48 md:w-56 xl:w-[18.75rem] 2xl:w-[31.25rem]">
               {/* Search Bar */}
               <div className="group transition-all duration-300 bg-general-background hover:bg-primary rounded-3xl">
                 <div className="relative flex items-center">
@@ -84,7 +84,7 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <button className="flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl">
+              <button className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl">
                 My Page
                 <span className="text-dark border border-dark rounded-full text-base">
                   <User size={16} />
@@ -187,10 +187,10 @@ const Logo = ({ className = "" }) => {
     <div
       className={`bg-primary inline-flex items-center justify-center pr-5 ${className}`}
       style={{
-        height: "34px",
-        width: "130px",
+        height: "2.125rem",
+        width: "8.125rem",
         clipPath:
-          "polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%)",
+          "polygon(0 0, calc(100% - 1.875rem) 0, 100% 50%, calc(100% - 1.875rem) 100%, 0 100%)",
       }}
     >
       <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center">
@@ -206,10 +206,10 @@ const MobileLogo = ({ className = "" }) => {
     <div
       className={`bg-primary inline-flex items-center justify-center pr-4 ${className}`}
       style={{
-        height: "32px",
-        width: "110px",
+        height: "2rem",
+        width: "6.875rem",
         clipPath:
-          "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)",
+          "polygon(0 0, calc(100% - 1.25rem) 0, 100% 50%, calc(100% - 1.25rem) 100%, 0 100%)",
       }}
     >
       <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center text-sm">

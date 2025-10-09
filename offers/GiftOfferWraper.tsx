@@ -7,7 +7,7 @@ import { Fragment } from "react";
 
 export default function GiftOfferWraper() {
     return (
-        <div className="w-full lg:py-[100px] py-[3rem]">
+        <div className="w-full lg:py-[6.25rem] py-[3rem]">
             <div className="flex justify-between items-center lg:py-[2.3rem] py-[1rem]">
                 <h2 className="lg:text-5xl text-2xl font-semibold text-smoky-white">
                     Gift Certificate

@@ -37,10 +37,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 0.25rem);
   --color-dark: var(--text-dark);
   --color-yellow: var(--text-yellow);
   --color-smoky-white: var(--text-smoky-white);
@@ -284,7 +284,7 @@
 
 /* Animated Button Css */
 .animated_button:hover .button_icon {
-  left: 10px;
+  left: 0.625rem;
 }
 
 .animated_button_content {
@@ -292,12 +292,12 @@
 }
 
 .animated_button:hover .animated_button_content {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .button_icon {
   position: absolute;
-  left: -23px;
+  left: -1.4375rem;
   transition: left 0.5s ease;
 }
 
@@ -311,9 +311,9 @@
 }
 
 .line_button:hover .line_button_content {
-  /* padding-left: 5px; */
-  /* letter-spacing: 1px; */
-  transform: translateX(5px);
+  /* padding-left: 0.3125rem; */
+  /* letter-spacing: 0.0625rem; */
+  transform: translateX(0.3125rem);
 }
 
 .line_button:hover .bottom_line {
