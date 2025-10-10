@@ -84,7 +84,7 @@ export default function WeeklyOfferCard({ offer, className }: WeeklyOfferCardPro
                             {allDays.map((day) => (
                                 <div
                                     key={day}
-                                    className={`flex items-center justify-center m-h-[1.4375rem] m-w-[2.018rem] lg:h-[1.4375rem] lg:w-[3.018rem] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
+                                    className={`flex items-center justify-center m-h-[1.4375rem] m-w-[2.018rem] xl:h-[1.4375rem] 2xl:w-[3.018rem] rounded-sm ${availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
                                         }`}
                                 >
                                     <p>{day}</p>
