@@ -1,13 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function MenuLinkButton({
   nav,
+  isActive = false,
+  onClick,
 }: {
   nav: { title: string; link: string };
+  isActive?: boolean;
+  onClick?: () => void;
 }) {
   return (
-    <div>
-      <div className="line_button relative flex cursor-pointer items-center gap-6 text-white transition-colors hover:text-primary xl:pr-[8.5625rem]">
+    <Link href={nav.link} onClick={onClick}>
+      <div className={cn(
+        "line_button relative flex cursor-pointer items-center gap-6 transition-colors hover:text-primary pb-2",
+        isActive ? "text-primary" : "text-white"
+      )}>
         <div className="line_button_content font-semibold text-base">
           {nav.title}
         </div>
@@ -17,11 +26,17 @@ export default function MenuLinkButton({
           alt="arrow-right"
           width={32}
           height={32}
-          className="w-fit object-cover"
+          className={cn(
+            "w-fit object-cover transition-all",
+            isActive && "scale-110"
+          )}
         />
 
-        <div className="bottom_line absolute h-[0.1875rem] bottom-[-0.5rem] w-[45%] sm:w-[20%] bg-primary" />
+        <div className={cn(
+          "bottom_line absolute h-[0.1875rem] bottom-0 bg-primary transition-all",
+          isActive ? "w-[60%] sm:w-[30%]" : "w-[45%] sm:w-[20%]"
+        )} />
       </div>
-    </div>
+    </Link>
   );
 }

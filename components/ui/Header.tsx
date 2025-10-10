@@ -5,9 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuLinkButton from "./MenuLinkButton";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,7 +26,9 @@ export default function Header() {
         {/* Mobile/Tablet Header (xs to md) */}
         <div className="flex lg:hidden items-center justify-between px-4 py-4">
           {/* Mobile Logo */}
-          <MobileLogo />
+          <Link href="/">
+            <MobileLogo />
+          </Link>
 
           {/* Mobile Icons */}
           <div className="flex items-center gap-3">
@@ -59,10 +64,42 @@ export default function Header() {
                 <Logo />
               </Link>
               <nav className="flex items-center gap-3 xl:gap-12 text-smoky-white font-semibold">
-                <Link href="/active-offers">Active 0ffers</Link>
-                <Link href="/weekday-specials">Weekday specials</Link>
-                <Link href="/happy-hour-offers">Happy hours</Link>
-                <Link href="/gift-certificates">Gift certificates</Link>
+                <Link 
+                  href="/active-offers"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/active-offers" && "text-primary border-b-2 border-primary"
+                  )}
+                >
+                  Active 0ffers
+                </Link>
+                <Link 
+                  href="/weekday-specials"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/weekday-specials" && "text-primary border-b-2 border-primary"
+                  )}
+                >
+                  Weekday specials
+                </Link>
+                <Link 
+                  href="/happy-hour-offers"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/happy-hour-offers" && "text-primary border-b-2 border-primary"
+                  )}
+                >
+                  Happy hours
+                </Link>
+                <Link 
+                  href="/gift-certificates"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/gift-certificates" && "text-primary border-b-2 border-primary"
+                  )}
+                >
+                  Gift certificates
+                </Link>
               </nav>
             </div>
             <div className="w-32 sm:w-48 md:w-56 xl:w-[18.75rem] 2xl:w-[31.25rem]">
@@ -114,7 +151,9 @@ export default function Header() {
           >
             {/* Menu Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-primary">
-              <MobileLogo />
+              <Link href="/" onClick={closeMenu}>
+                <MobileLogo />
+              </Link>
               <div className="flex items-center gap-3">
                 <button className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors">
                   <Search className="w-5 h-5 text-primary" />
@@ -132,16 +171,35 @@ export default function Header() {
             </div>
 
             {/* Menu Content */}
-            <div className="flex flex-col px-14 py-10 ">
+            <div className="flex flex-col px-14 py-10">
               {/* Main Navigation Links */}
-              <nav className="flex-1 space-y-12">
-                <MenuLinkButton nav={{ title: "Virk tilboð", link: "/" }} />
-                <MenuLinkButton nav={{ title: "Vikudags tilboð", link: "/" }} />
+              <nav className="flex-1 flex flex-col gap-8">
                 <MenuLinkButton
-                  nav={{ title: "Happy hour tilboð", link: "/" }}
+                  nav={{ title: "Active offers", link: "/active-offers" }}
+                  isActive={pathname === "/active-offers"}
+                  onClick={closeMenu}
                 />
-                <MenuLinkButton nav={{ title: "Gjafabréf", link: "/" }} />
-                <MenuLinkButton nav={{ title: "Mínar síður", link: "/" }} />
+                <MenuLinkButton
+                  nav={{ title: "Weekday specials", link: "/weekday-specials" }}
+                  isActive={pathname === "/weekday-specials"}
+                  onClick={closeMenu}
+                />
+                <MenuLinkButton
+                  nav={{
+                    title: "Happy hour offers",
+                    link: "/happy-hour-offers",
+                  }}
+                  isActive={pathname === "/happy-hour-offers"}
+                  onClick={closeMenu}
+                />
+                <MenuLinkButton
+                  nav={{
+                    title: "Gift certificates",
+                    link: "/gift-certificates",
+                  }}
+                  isActive={pathname === "/gift-certificates"}
+                  onClick={closeMenu}
+                />
               </nav>
 
               {/* Bottom Utility Links */}
