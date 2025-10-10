@@ -42,7 +42,7 @@ export default function GiftOfferWraper() {
                         <div key={item.id} className="flex-shrink-0 snap-center">
                             <GiftOfferCard 
                                 offer={item}
-                                className="w-[17.625rem] md:w-[18.75rem] lg:w-[25rem] xl:w-[25.625rem]"
+                                className="w-[17.625rem] md:w-[18.75rem] lg:w-[25rem] xl:w-[25.625rem] max-h-[480px] md:max-h-[600px] lg:max-h-[625px]"
                             />
                         </div>
                     );

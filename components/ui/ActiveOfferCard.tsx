@@ -34,7 +34,7 @@ export default function ActiveOfferCard({
     >
       {/* Discount Banner */}
       <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[3rem] md:h-[3.5rem] w-auto bg-offer-banner">
-        <span className="text-xl md:text-[1.75rem] font-semibold text-dark">
+        <span className="text-xl md:text-[1.75rem] font-semibold text-dark max-w-[90%] w-full text-center truncate">
           {discount}
         </span>
       </div>
@@ -48,7 +48,7 @@ export default function ActiveOfferCard({
         />
         {/* Time Left Indicator */}
         <div className="absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
-          <div className="min-w-[9.4375rem] text-center rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary">
+          <div className="min-w-[9.4375rem] max-w-[14.5rem] text-center rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary w-full truncate">
             {timeLeft}
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function ActiveOfferCard({
             </div>
 
             {/* Title */}
-            <h3 className="text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 truncate">
+            <h3 className="max-w-[90%] text-sm font-bold sm:text-base lg:text-2xl text-smoky-white mb-4 w-full truncate">
               {title}
             </h3>
           </div>

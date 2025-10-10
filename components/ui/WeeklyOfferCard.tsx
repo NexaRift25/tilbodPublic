@@ -32,7 +32,7 @@ export default function WeeklyOfferCard({ offer, className }: WeeklyOfferCardPro
             )}>
                 {/* Discount Banner */}
                 <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
-                    <span className="text-xl md:text-[1.75rem] font-semibold text-dark truncate">
+                    <span className="text-xl md:text-[1.75rem] font-semibold text-dark max-w-[90%] w-full text-center truncate">
                         {discount}
                     </span>
                 </div>
@@ -46,7 +46,7 @@ export default function WeeklyOfferCard({ offer, className }: WeeklyOfferCardPro
                     />
                     {/* Badge Indicator */}
                     <div className="min-w-[14.75rem] text-center absolute bottom-0 left-1/2 z-40 -translate-x-1/2 transform">
-                        <div className="whitespace-nowrap rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary truncate">
+                        <div className="max-w-[14.5rem] min-w-[9rem] rounded-t-3xl text-sm shadow-lg px-[2rem] py-[0.34375rem] font-semibold lg:text-base border border-b-0 bg-card-background text-smoky-white border-primary w-full truncate">
                             {badge}
                         </div>
                     </div>
@@ -58,13 +58,13 @@ export default function WeeklyOfferCard({ offer, className }: WeeklyOfferCardPro
                     <div className="pointer-events-none flex-1">
                         <div className=" border-b border-primary">
                             {/* Title */}
-                            <h3 className="text-lg font-bold lg:text-2xl text-smoky-white mb-2 lg:mb-4 truncate">
+                            <h3 className="max-w-[90%] text-lg font-bold lg:text-2xl text-smoky-white mb-2 lg:mb-4 w-full truncate">
                                 {title}
                             </h3>
                         </div>
 
                         {/* Location */}
-                        <div className="flex items-center gap-1.5 py-2 md:py-4 text-sm font-semibold sm:text-base text-yellow truncate">
+                        <div className="flex items-center gap-1.5 py-2 md:py-4 text-sm font-semibold sm:text-base text-yellow max-w-[90%] w-full truncate">
                             <MapPin />  {location}
                         </div>
 

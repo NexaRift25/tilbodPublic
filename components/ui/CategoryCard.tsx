@@ -22,7 +22,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         height={124}
         className="pointer-events-none select-none mx-auto min-w-[7.75rem] min-h-[7.75rem] h-[7.75rem] md:w-full md:h-[13.9375rem] object-cover border border-primary rounded-2xl"
       />
-      <h3 className="text-base md:text-lg font-semibold text-center text-smoky-white pt-3 truncate">
+      <h3 className="text-base md:text-lg font-semibold text-center text-smoky-white pt-3 max-w-[90%] mx-auto w-full truncate">
         {name}
       </h3>
     </div>

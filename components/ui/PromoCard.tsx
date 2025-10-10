@@ -42,7 +42,7 @@ export default function PromoCard({ offer }: PromoCardProps) {
           <div className=" w-full p-2">
             <div className="flex flex-col items-start gap-0.5 px-2">
               <div className="text-base text-yellow font-semibold">{brand}</div>
-              <h3 className="text-2xl font-semibold mb-4 truncate">{title}</h3>
+              <h3 className="text-2xl font-semibold mb-4 max-w-[90%] w-full truncate">{title}</h3>
             </div>
 
             <div className="hidden w-full lg:block">

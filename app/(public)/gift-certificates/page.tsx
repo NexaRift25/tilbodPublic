@@ -38,7 +38,7 @@ export default function GiftCardOffersPage() {
 
             // Otherwise render offer card
             return (
-              <GiftOfferCard key={item.id} offer={item} className="w-full" />
+              <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[625px]" />
             );
           })}
         </div>
@@ -71,7 +71,6 @@ export default function GiftCardOffersPage() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={setCurrentPage}
-          color="#FF773C"
         />
       </Container>
     </div>
