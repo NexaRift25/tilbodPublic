@@ -31,14 +31,14 @@ export default function GiftCardOffersPage() {
                 <AdCard
                   key={`ad-${index}`}
                   variant="gift-card"
-                  className="w-full"
+                  className="w-full "
                 />
               );
             }
 
             // Otherwise render offer card
             return (
-              <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[625px]" />
+            <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[39.0625rem]" />
             );
           })}
         </div>
@@ -61,7 +61,7 @@ export default function GiftCardOffersPage() {
 
             // Otherwise render offer card
             return (
-              <GiftOfferCard key={item.id} offer={item} className="w-full" />
+              <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[39.0625rem]" />
             );
           })}
         </div>

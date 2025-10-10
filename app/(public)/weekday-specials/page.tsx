@@ -38,7 +38,7 @@ export default function WeeklyOffersPage() {
 
             // Otherwise render offer card
             return (
-              <WeeklyOfferCard key={item.id} offer={item} className="w-full" />
+              <WeeklyOfferCard key={item.id} offer={item} className="w-full max-h-[38.25rem]" />
             );
           })}
         </div>
@@ -61,7 +61,7 @@ export default function WeeklyOffersPage() {
 
             // Otherwise render offer card
             return (
-              <WeeklyOfferCard key={item.id} offer={item} className="w-full" />
+              <WeeklyOfferCard key={item.id} offer={item} className="w-full max-h-[38.25rem]" />
             );
           })}
         </div>
