@@ -1,0 +1,4 @@
+# Clear build cache
+.next
+node_modules
+.vercel
