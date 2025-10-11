@@ -4,7 +4,7 @@ import { categories } from "@/data/categories";
 
 export default function CategoryCardWraper() {
   return (
-    <div className="w-full lg:py-[7.1rem] py-[1rem]">
+    <div className="w-full pb-16 pt-24">
       <h2 className="text-2xl font-semibold text-smoky-white mb-1">
         What kind of offer are you looking for?
       </h2>
