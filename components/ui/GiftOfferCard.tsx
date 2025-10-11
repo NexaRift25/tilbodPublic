@@ -86,7 +86,7 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
 
           {/* Purchase Count - Absolute positioned */}
           <div className="absolute bottom-[4.75rem] md:bottom-[5.5rem] text-smoky-white text-sm md:text-base font-medium">
-            <p className="max-w-[80%] md:max-w-[100%] w-full truncate">
+            <p className="max-w-[100%] md:max-w-[80%] lg:max-w-[100%] w-full truncate">
               {purchaseCount} have taken <span className="hidden md:inline">advantage of the offer</span>
             </p>
           </div>
