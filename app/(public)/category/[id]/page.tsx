@@ -13,17 +13,20 @@ import Pagination from "@/components/ui/Pagination";
 import ViewMoreOffers from "@/components/ui/ViewMoreOffers";
 import CategoryCardWraper from "@/componentWraper/CategoryCardWraper";
 import { injectAdAtPosition, isAdPlaceholder } from "@/utils/injectAds";
-import { useState } from "react";
+import { useState, use } from "react";
 
 interface SingleCategoryPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function SingleCategoryPage({ params }: SingleCategoryPageProps) {
+  // Unwrap params Promise
+  const { id } = use(params);
+  
   // Find category by slug (the id parameter is actually the slug)
-  const category = categories.find((cat) => cat.slug === params.id);
+  const category = categories.find((cat) => cat.slug === id);
 
   if (!category) {
     notFound();
@@ -56,7 +59,7 @@ export default function SingleCategoryPage({ params }: SingleCategoryPageProps) 
         <div className="pb-16">
           <OfferFillter
             offerType={`${category.name} Offers`}
-            selectedFilters={[params.id]}
+            selectedFilters={[id]}
           />
         </div>
 

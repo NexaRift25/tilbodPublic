@@ -6,15 +6,19 @@ import { notFound } from "next/navigation";
 import { giftOfers } from "@/data/giftOfers";
 import Container from "@/components/ui/Container";
 import Footer from "@/components/ui/Footer";
+import { use } from "react";
 
 interface GiftDetailsPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
-  const giftOffer = giftOfers.find((offer) => offer.id === parseInt(params.id));
+  // Unwrap params Promise
+  const { id } = use(params);
+  
+  const giftOffer = giftOfers.find((offer) => offer.id === parseInt(id));
 
   if (!giftOffer) {
     notFound();

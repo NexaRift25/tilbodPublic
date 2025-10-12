@@ -1,5 +1,5 @@
 "use client";
-import { Search, User, Menu, X, ArrowRight } from "lucide-react";
+import { Search, User, Menu, X } from "lucide-react";
 import Container from "./Container";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,9 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import MenuLinkButton from "./MenuLinkButton";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import SearchPopup from "./SearchPopup";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -18,6 +20,14 @@ export default function Header() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const openSearchPopup = () => {
+    setIsSearchOpen(true);
+  };
+
+  const closeSearchPopup = () => {
+    setIsSearchOpen(false);
   };
 
   return (
@@ -33,7 +43,10 @@ export default function Header() {
           {/* Mobile Icons */}
           <div className="flex items-center gap-3">
             {/* Search Icon */}
-            <button className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors">
+            <button 
+              onClick={openSearchPopup}
+              className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
+            >
               <Search className="w-5 h-5 text-primary" />
             </button>
 
@@ -109,12 +122,12 @@ export default function Header() {
                   <input
                     type="search"
                     placeholder="Search"
-                    // onClick={openSearchPopup}
+                    onClick={openSearchPopup}
                     readOnly
                     className="w-full border border-primary px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-2 text-xs sm:text-sm lg:text-base text-white rounded-3xl bg-transparent outline-none placeholder:text-white focus:border-primary focus:ring-0 cursor-pointer placeholder:font-semibold group-hover:placeholder:text-dark transition-all"
                   />
                   <button
-                    // onClick={openSearchPopup}
+                    onClick={openSearchPopup}
                     className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-primary group-hover:text-dark transition-colors"
                   >
                     <Search className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
@@ -155,7 +168,10 @@ export default function Header() {
                 <MobileLogo />
               </Link>
               <div className="flex items-center gap-3">
-                <button className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors">
+                <button 
+                  onClick={openSearchPopup}
+                  className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
+                >
                   <Search className="w-5 h-5 text-primary" />
                 </button>
                 <button
@@ -237,6 +253,9 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Search Popup */}
+      <SearchPopup isOpen={isSearchOpen} onClose={closeSearchPopup} />
     </>
   );
 }

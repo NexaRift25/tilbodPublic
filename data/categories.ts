@@ -3,15 +3,13 @@ export const categories = [
     id: 1,
     name: "Electronics",
     slug: "electronics",
-    image:
-      "/home-section-2/source/259_69f3864c-c4f8-49cf-b642-6800f94787e9-thumbnail-1080x1080-70.jpg",
+    image:"/home-section-2/source/259_69f3864c-c4f8-49cf-b642-6800f94787e9-thumbnail-1080x1080-70.jpg",
   },
   {
     id: 2,
     name: "Food & Dining",
     slug: "food-dining",
-    image:
-      "/home-section-2/source/2c1cbff4b1b7134eb8c69e06fb1f8de0944b0b45.jpg",
+    image:"/home-section-2/source/2c1cbff4b1b7134eb8c69e06fb1f8de0944b0b45.jpg",
   },
   {
     id: 3,
