@@ -123,12 +123,12 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <button className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl">
+              <Link href="/login" className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl">
                 My Page
                 <span className="text-dark border border-dark rounded-full text-base">
                   <User size={16} />
                 </span>
-              </button>
+              </Link>
             </div>
           </Container>
         </div>
@@ -164,9 +164,9 @@ export default function Header() {
                 >
                   <X className="w-5 h-5 text-white" />
                 </button>
-                <button className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                <Link href="/login" className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
                   <User className="w-5 h-5 text-dark border border-dark rounded-full" />
-                </button>
+                </Link>
               </div>
             </div>
 
