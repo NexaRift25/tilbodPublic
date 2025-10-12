@@ -8,7 +8,6 @@ interface GiftOffer {
   title: string;
   price: string;
   description: string;
-  sub_title: string;
   image: string;
   category: string;
   timeLeft: string;
@@ -27,7 +26,7 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
     price,
     description,
     image,
-    sub_title,
+    category,
     timeLeft,
     purchaseCount,
     id,
@@ -68,12 +67,12 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
             <div className="border-b border-primary">
               {/* Category */}
               <div className="text-xs font-semibold sm:text-base text-yellow">
-                {title}
+                {category}
               </div>
 
               {/* Title */}
               <h3 className="max-w-[90%] text-lg font-bold lg:text-xl 2xl:text-2xl text-smoky-white mb-2 lg:mb-4 w-full truncate">
-                {sub_title}
+                {title}
               </h3>
             </div>
 
