@@ -5,6 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { giftOfers } from "@/data/giftOfers";
 import Container from "@/components/ui/Container";
+import Footer from "@/components/ui/Footer";
 
 interface GiftDetailsPageProps {
   params: {
@@ -20,11 +21,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
   }
 
   return (
-    <div className="min-h-screen py-8 px-4 theme-orange">
-      <Container className=" max-w-[118.75rem] w-[85%] mx-auto">
+    <div className="min-h-screen py-8 theme-orange">
+      <Container className=" max-w-[118.75rem] w-[86%] mx-auto py-24">
         {/* Main Card Container */}
         <div className=" overflow-hidden">
-          <div className="grid lg:grid-cols-2 gap-8 p-8">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Section - Content */}
             <div className="flex flex-col justify-between space-y-6">
               {/* Offer Tag */}
@@ -94,6 +95,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
           </div>
         </div>
       </Container>
+        <Footer/>
     </div>
   );
 }
