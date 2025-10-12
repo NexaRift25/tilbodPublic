@@ -21,7 +21,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <div
       onClick={() => router.push(`/category/${slug}`)}
-      className={`flex flex-col items-center justify-center p-[0.5rem] pl-[0.4375rem] md:pl-[0.5rem] ${pathname === `/category/${slug}` ? "bg-primary text-dark" : "bg-card-background text-smoky-white"} min-w-[8.75rem] min-h-[11.5rem] w-[8.75rem] h-[11.5rem] md:w-[13.9375rem] md:h-[17.875rem] border border-primary rounded-3xl`}
+      className={`lg:flex flex-col items-center justify-center p-[0.5rem] pl-[0.4375rem] md:pl-[0.5rem] ${pathname === `/category/${slug}` ? "bg-primary text-dark" : "bg-card-background text-smoky-white"} min-w-[8.75rem] min-h-[11.5rem] w-[8.75rem] h-[11.5rem] md:w-[13.9375rem] md:h-[17.875rem] border border-primary rounded-3xl`}
     >
       <Image
         src={image}
