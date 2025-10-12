@@ -62,9 +62,9 @@ export default function OfferFillter({
           {selectedFilters.map((filter, index) => (
             <div
               key={index}
-              className="flex items-center gap-4 rounded-[24px] border border-primary bg-transparent px-6 py-2 h-[36px]"
+              className="flex items-center gap-4 rounded-[24px] border border-primary bg-transparent px-6 py-1.5"
             >
-              <span className="text-base font-semibold text-smoky-white">
+              <span className="text-base font-semibold text-smoky-white capitalize">
                 {filter}
               </span>
               <span className="text-smoky-white text-lg font-semibold">
