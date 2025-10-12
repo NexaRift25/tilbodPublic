@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { MoveRight } from "lucide-react";
 
 export default function MenuLinkButton({
   nav,
@@ -21,20 +22,11 @@ export default function MenuLinkButton({
           {nav.title}
         </div>
 
-        <Image
-          src="/rightArrow.svg"
-          alt="arrow-right"
-          width={32}
-          height={32}
-          className={cn(
-            "w-fit object-cover transition-all",
-            isActive && "scale-110"
-          )}
-        />
+       <MoveRight size={36} className="text-primary"/>
 
         <div className={cn(
           "bottom_line absolute h-[0.1875rem] bottom-0 bg-primary transition-all",
-          isActive ? "w-[60%] sm:w-[30%]" : "w-[45%] sm:w-[20%]"
+          isActive ? "w-[60%] sm:w-[30%] lg:w-[60%] 2xl:w-[30%]" : "w-[45%] sm:w-[20%] lg:w-[45%]"
         )} />
       </div>
     </Link>

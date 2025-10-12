@@ -4,7 +4,11 @@ import GiftOfferCard from "@/components/ui/GiftOfferCard";
 import AdCard from "@/components/ui/AdCard";
 import Banner from "@/components/ui/Banner";
 import Container from "@/components/ui/Container";
+import Footer from "@/components/ui/Footer";
+import OfferFillter from "@/components/ui/OfferFillter";
 import Pagination from "@/components/ui/Pagination";
+import ViewMoreOffers from "@/components/ui/ViewMoreOffers";
+import CategoryCardWraper from "@/componentWraper/CategoryCardWraper";
 import { giftOfers } from "@/data/giftOfers";
 import { injectAdAtPosition, isAdPlaceholder } from "@/utils/injectAds";
 import { useState } from "react";
@@ -19,9 +23,24 @@ export default function GiftCardOffersPage() {
   const restOfItemsWithAd = injectAdAtPosition(giftOfers.slice(8, 16), 4);
 
   return (
-    <div className="theme-orange">
+    <div className="pb-4 theme-orange">
       <Banner className="border-primary" />
-      <Container className="w-[86%] md:w-[86%] max-w-[1524px] mx-auto py-[4.375rem] lg:py-[7.5rem]">
+      <div className="w-full pl-8 sm:pl-12 lg:pl-24 xl:pl-[100px] 2xl:pl-[137px] max-w-[130rem] mx-auto">
+        <CategoryCardWraper />
+      </div>
+      <Container className="w-[86%] md:w-[90%] lg:w-[86%] max-w-[112rem] mx-auto pb-24">
+        <div className="pb-16">
+          <OfferFillter
+            offerType="Gift Certificates"
+            selectedFilters={[
+              "Electronics",
+              "Entertainment",
+              "Baby Products",
+              "Black Friday",
+              "Pampering",
+            ]}
+          />
+        </div>
         {/* justify-items-center centers cards in their grid cells, gap-6 maintains 24px spacing */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center">
           {itemsWithAd.map((item, index) => {
@@ -31,20 +50,24 @@ export default function GiftCardOffersPage() {
                 <AdCard
                   key={`ad-${index}`}
                   variant="gift-card"
-                  className="w-full "
+                  className="w-full"
                 />
               );
             }
 
             // Otherwise render offer card
             return (
-            <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[39.0625rem]" />
+              <GiftOfferCard
+                key={item.id}
+                offer={item}
+                className="w-full max-h-[39.0625rem]"
+              />
             );
           })}
         </div>
       </Container>
       <Banner className="border-primary" />
-      <Container className="w-[86%] md:w-[86%] max-w-[1524px] mx-auto py-[4.375rem] lg:py-[7.5rem]">
+      <Container className="w-[86%] md:w-[86%] max-w-[112rem] mx-auto py-[4.375rem] lg:py-[7.5rem]">
         {/* justify-items-center centers cards in their grid cells, gap-6 maintains 24px spacing */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center">
           {restOfItemsWithAd.map((item, index) => {
@@ -61,7 +84,11 @@ export default function GiftCardOffersPage() {
 
             // Otherwise render offer card
             return (
-              <GiftOfferCard key={item.id} offer={item} className="w-full max-h-[39.0625rem]" />
+              <GiftOfferCard
+                key={item.id}
+                offer={item}
+                className="w-full max-h-[39.0625rem]"
+              />
             );
           })}
         </div>
@@ -73,6 +100,10 @@ export default function GiftCardOffersPage() {
           onPageChange={setCurrentPage}
         />
       </Container>
+      <div className="pb-[2rem]">
+        <ViewMoreOffers />
+      </div>
+      <Footer />
     </div>
   );
 }
