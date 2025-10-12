@@ -14,8 +14,6 @@ import ViewMoreOffers from "@/components/ui/ViewMoreOffers";
 import CategoryCardWraper from "@/componentWraper/CategoryCardWraper";
 import { injectAdAtPosition, isAdPlaceholder } from "@/utils/injectAds";
 import { useState } from "react";
-import Image from "next/image";
-import { Slabo_13px } from "next/font/google";
 
 interface SingleCategoryPageProps {
   params: {
