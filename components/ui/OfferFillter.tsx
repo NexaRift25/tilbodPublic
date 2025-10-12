@@ -48,16 +48,16 @@ export default function OfferFillter({
           >
             <span className="text-base font-semibold text-primary">
               {filter.name}
-            </span>
+                </span>
             <div className="flex-shrink-0 text-primary">
               {filter.icon}
             </div>
           </div>
-        ))}
-      </div>
+            ))}
+          </div>
 
-      {/* Selected Filter Tags Row */}
-      {selectedFilters.length > 0 && (
+          {/* Selected Filter Tags Row */}
+          {selectedFilters.length > 0 && (
         <div className="flex flex-wrap gap-4">
           {selectedFilters.map((filter, index) => (
             <div
@@ -70,10 +70,10 @@ export default function OfferFillter({
               <span className="text-smoky-white text-lg font-semibold">
                 ×
               </span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          )}
     </div>
   );
 }

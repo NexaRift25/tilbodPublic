@@ -26,7 +26,7 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
     price,
     description,
     image,
-    category,
+    sub_title,
     timeLeft,
     purchaseCount,
     link,
@@ -67,12 +67,12 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
             <div className="border-b border-primary">
               {/* Category */}
               <div className="text-xs font-semibold sm:text-base text-yellow">
-                {category}
+                {title}
               </div>
 
               {/* Title */}
               <h3 className="max-w-[90%] text-lg font-bold lg:text-xl 2xl:text-2xl text-smoky-white mb-2 lg:mb-4 w-full truncate">
-                {title}
+                {sub_title}
               </h3>
             </div>
 
