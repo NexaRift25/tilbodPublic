@@ -64,10 +64,10 @@ export default function OfferFillter({
               key={index}
               className="flex items-center gap-4 rounded-[24px] border border-primary bg-transparent px-6 py-2 h-[36px]"
             >
-              <span className="text-base font-semibold text-primary">
+              <span className="text-base font-semibold text-smoky-white">
                 {filter}
               </span>
-              <span className="text-primary text-lg font-semibold">
+              <span className="text-smoky-white text-lg font-semibold">
                 ×
               </span>
             </div>
