@@ -46,7 +46,7 @@ export default function PromoCard({ offer }: PromoCardProps) {
             </div>
 
             <div className="hidden w-full lg:block">
-              <AnimatedButton />
+              <AnimatedButton link={link} />
             </div>
           </div>
         </div>

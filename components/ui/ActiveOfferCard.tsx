@@ -79,7 +79,7 @@ export default function ActiveOfferCard({
         {/* Action Buttons */}
         <div className="absolute bottom-[1rem] left-[1rem] right-[1rem] md:bottom-[1.5rem] md:left-[1.5rem] md:right-[1.5rem]">
           {/* View Offer Button */}
-          <AnimatedButton />
+          <AnimatedButton link={link} />
         </div>
       </div>
     </div>
