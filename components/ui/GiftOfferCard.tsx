@@ -8,6 +8,7 @@ interface GiftOffer {
   title: string;
   price: string;
   description: string;
+  sub_title: string;
   image: string;
   category: string;
   timeLeft: string;
@@ -29,7 +30,7 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
     sub_title,
     timeLeft,
     purchaseCount,
-    link,
+    id,
   } = offer;
 
   return (
@@ -94,7 +95,7 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
           {/* Action Buttons */}
           <div className="absolute bottom-[1rem] left-[1rem] right-[1rem] 2xl:bottom-[1.5rem] lg:left-[1.5rem] lg:right-[1.5rem] flex flex-col gap-2">
             {/* View Offer Button */}
-            <AnimatedButton />
+            <AnimatedButton link={`/gift-details/${id}`}/>
           </div>
         </div>
       </div>

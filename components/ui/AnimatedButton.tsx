@@ -1,9 +1,11 @@
-import { MoveRight } from "lucide-react";
+'use client';
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const AnimatedButton = () => {
+const AnimatedButton = ({ link }: { link: string }) => {
+  const router = useRouter();
   return (
-    <button className="group  whitespace-nowrap overflow-hidden  w-full py-[0.6875rem] px-[1.5rem] rounded-[3.5rem] bg-card-background border border-primary hover:border-green-500 transition-all duration-100 cursor-pointer text-primary relative">
+    <button onClick={() => router.push(link)} className="group  whitespace-nowrap overflow-hidden  w-full py-[0.6875rem] px-[1.5rem] rounded-[3.5rem] bg-card-background border border-primary hover:border-green-500 transition-all duration-100 cursor-pointer text-primary relative">
       <div className="flex items-center justify-between md:-translate-x-1/4 transition-all duration-400 group-hover:translate-x-0">
         <Image
           src="/rightArrow.svg"
