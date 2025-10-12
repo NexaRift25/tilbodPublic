@@ -4,6 +4,7 @@ import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { giftOfers } from "@/data/giftOfers";
+import Container from "@/components/ui/Container";
 
 interface GiftDetailsPageProps {
   params: {
@@ -12,7 +13,7 @@ interface GiftDetailsPageProps {
 }
 
 export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
-  const giftOffer = giftOfers.find((offer) => offer.id === parseInt(params.id));
+  const giftOffer = giftOfers?.find((offer) => offer.id === parseInt(params.id));
 
   if (!giftOffer) {
     notFound();
@@ -20,7 +21,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
 
   return (
     <div className="min-h-screen py-8 px-4 theme-orange">
-      <div className="max-w-[118.75rem] w-[85%] mx-auto">
+      <Container className=" max-w-[118.75rem] w-[85%] mx-auto">
         {/* Main Card Container */}
         <div className=" overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-8 p-8">
@@ -56,7 +57,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
               </div>
 
               {/* Purchase Count */}
-              <p className="text-primary text-sm font-medium">
+              <p className="text-yellow text-base font-medium">
                 {giftOffer.purchaseCount} have taken advantage of the offer
               </p>
 
@@ -67,11 +68,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
 
               {/* Action Buttons */}
                 <div className="flex xl:flex-row flex-col gap-4 w-full">
-                <button className="flex justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-2xl items-center font-semibold border border-primary px-8    ">
+                <button className="flex justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8    ">
                   <span>Gift Certificate</span>
                   <MoveRight size={32} />
                 </button>
-                <button className="flex justify-between max-w-[250px] w- gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-2xl items-center font-semibold border border-primary px-8    ">
+                <button className="flex justify-between max-w-[250px] w- gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8    ">
                   <span>Add to cart</span>
                   <MoveRight size={32} />
                 </button>
@@ -92,7 +93,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
