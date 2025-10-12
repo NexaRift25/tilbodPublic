@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -51,8 +53,9 @@ export default function LoginPage() {
     // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Handle successful login
+      // Handle successful login - redirect to dashboard
       console.log("Login successful", formData);
+      router.push("/dashboard");
     } catch (error) {
       console.error("Login failed", error);
     } finally {
@@ -65,6 +68,21 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
+          <Link href="/" className="inline-block">
+            <div
+              className="bg-primary inline-flex items-center justify-center pr-5 mb-6"
+              style={{
+                height: "2.5rem",
+                width: "10rem",
+                clipPath:
+                  "polygon(0 0, calc(100% - 2rem) 0, 100% 50%, calc(100% - 2rem) 100%, 0 100%)",
+              }}
+            >
+              <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center text-lg">
+                Tilboð.is
+              </span>
+            </div>
+          </Link>
           <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
             Welcome Back
           </h1>

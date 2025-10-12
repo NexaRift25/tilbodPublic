@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Eye,
   EyeOff,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 export default function RegisterPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -96,8 +98,9 @@ export default function RegisterPage() {
     // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Handle successful registration
+      // Handle successful registration - redirect to dashboard
       console.log("Registration successful", formData);
+      router.push("/dashboard");
     } catch (error) {
       console.error("Registration failed", error);
     } finally {
@@ -117,6 +120,21 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
+          <Link href="/" className="inline-block">
+            <div
+              className="bg-primary inline-flex items-center justify-center pr-5 mb-6"
+              style={{
+                height: "2.5rem",
+                width: "10rem",
+                clipPath:
+                  "polygon(0 0, calc(100% - 2rem) 0, 100% 50%, calc(100% - 2rem) 100%, 0 100%)",
+              }}
+            >
+              <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center text-lg">
+                Tilboð.is
+              </span>
+            </div>
+          </Link>
           <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
             Create Account
           </h1>
