@@ -31,9 +31,10 @@ export default function ViewMoreOffers() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[90%] 2xl:w-[70%]">
           {offerPaths.map(
-            (path) =>
+            (path, index) =>
               path.path !== pathname && (
                 <MenuLinkButton
+                  key={index}
                   nav={{ title: path.title, link: path.path }}
                   isActive={false}
                   onClick={() => {}}
