@@ -1,6 +1,8 @@
+"use client";
 import { MoveRight } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 interface GiftOffer {
   id: number;
@@ -20,7 +22,11 @@ interface GiftOfferCardProps {
   className?: string;
 }
 
-export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) {
+export default function GiftOfferCard({
+  offer,
+  className,
+}: GiftOfferCardProps) {
+  const pathname = usePathname();
   const {
     title,
     price,
@@ -34,14 +40,16 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
 
   return (
     <div className="theme-orange">
-      <div className={cn(
-        "w-full h-[34rem] sm:h-[38rem] md:h-[42rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto flex flex-col",
-        className
-      )}>
+      <div
+        className={cn(
+          "w-full h-[34rem] sm:h-[38rem] md:h-[42rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto flex flex-col",
+          className
+        )}
+      >
         {/* Price Banner */}
         <div className="bg-primary absolute left-[1rem] right-[1rem] top-[1rem] z-30 flex select-none items-center justify-center rounded-full py-[0.375rem] h-[2.5rem] md:h-[3.5rem] w-auto bg-offer-banner">
           <span className="text-xl md:text-[1.75rem] font-semibold text-dark max-w-[80%] w-full text-center truncate">
-            {price}
+            {"/gift-certificates" !== pathname ? price : category}
           </span>
         </div>
 
@@ -67,7 +75,9 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
             <div className="border-b border-primary">
               {/* Category */}
               <div className="text-xs font-semibold sm:text-base text-yellow">
-                {category}
+                {"/gift-certificates" !== pathname
+                  ? category
+                  : purchaseCount + " have taken advantage of the offer"}{" "}
               </div>
 
               {/* Title */}
@@ -85,16 +95,23 @@ export default function GiftOfferCard({ offer, className }: GiftOfferCardProps) 
           </div>
 
           {/* Purchase Count - Absolute positioned */}
-          <div className="absolute bottom-[4.75rem] md:bottom-[5.5rem] text-smoky-white text-sm md:text-base font-medium">
-            <p className="max-w-[100%] md:max-w-[80%] lg:max-w-[100%] w-full truncate">
-              {purchaseCount} have taken <span className="hidden md:inline">advantage of the offer</span>
-            </p>
+          <div className="absolute bottom-[4.75rem] md:bottom-[6rem] text-smoky-white text-sm md:text-base font-medium">
+            {pathname !== "/gift-certificates" ? (
+              <p className="max-w-[100%] md:max-w-[80%] lg:max-w-[100%] w-full truncate">
+                {purchaseCount} have taken{" "}
+                <span className="hidden md:inline">advantage of the offer</span>
+              </p>
+            ) : (
+              <p className="text-yellow text-lg md:text-xl lg:text-3xl font-bold">
+                {price}
+              </p>
+            )}
           </div>
 
           {/* Action Buttons */}
           <div className="absolute bottom-[1rem] left-[1rem] right-[1rem] 2xl:bottom-[1.5rem] lg:left-[1.5rem] lg:right-[1.5rem] flex flex-col gap-2">
             {/* View Offer Button */}
-            <AnimatedButton link={`/gift-details/${id}`}/>
+            <AnimatedButton link={`/gift-details/${id}`} />
           </div>
         </div>
       </div>
