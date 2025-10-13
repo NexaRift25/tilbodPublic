@@ -28,7 +28,7 @@ export default function ActiveOfferCard({
   return (
     <div
       className={cn(
-        "w-full min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden rounded-[2.5rem] border border-primary sm:rounded-[2.5rem] bg-card-background mx-auto",
+        "w-full min-h-[34rem] h-[34rem] sm:h-[34rem] md:h-[38.75rem] relative overflow-hidden rounded-[2.5rem] border border-primary sm:rounded-[2.5rem] bg-card-background mx-auto",
         className
       )}
     >

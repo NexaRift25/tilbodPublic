@@ -27,7 +27,7 @@ export default function HappyHourOfferCard({ offer, className }: HappyHourOfferC
     return (
         <div className="theme-green">
             <div className={cn(
-                "w-full min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto",
+                "w-full min-h-[34rem] h-[34rem] sm:h-[33rem] md:h-[38.75rem] relative overflow-hidden border border-primary rounded-[2.5rem] bg-card-background mx-auto",
                 className
             )}>
                 {/* Time Banner */}

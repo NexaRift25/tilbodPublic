@@ -19,13 +19,13 @@ export default function AdCard({
   const variants = {
     "active-offer": {
       container:
-        "min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
+        "min-h-[34rem] h-[34rem] sm:h-[34rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
     "happy-hour": {
       container:
-        "min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
+        "min-h-[34rem] h-[34rem] sm:h-[34rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
@@ -43,7 +43,7 @@ export default function AdCard({
     },
     "weekly-offer": {
       container:
-        "min-h-[30rem] h-[30rem] sm:h-[33rem] md:h-[38.75rem]",
+        "min-h-[34rem] h-[34rem] sm:h-[34rem] md:h-[38.75rem]",
       rounded: "rounded-[2.5rem]",
       padding: "p-4",
     },
