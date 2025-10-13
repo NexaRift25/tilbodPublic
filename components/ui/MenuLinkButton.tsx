@@ -17,7 +17,7 @@ export default function MenuLinkButton({
         "line_button relative flex cursor-pointer items-center gap-6 transition-colors hover:text-primary pb-2",
         isActive ? "text-primary" : "text-white"
       )}>
-        <div className="line_button_content font-semibold text-base">
+        <div className="line_button_content font-semibold text-base md:text-2xl">
           {nav.title}
         </div>
 

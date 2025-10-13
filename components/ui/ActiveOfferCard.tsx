@@ -11,6 +11,8 @@ interface Offer {
   category: string;
   timeLeft: string;
   location: string;
+  price: string | null;
+  discountPrice: string | null;
   link: string;
 }
 
@@ -23,8 +25,17 @@ export default function ActiveOfferCard({
   offer,
   className,
 }: ActiveOfferCardProps) {
-  const { title, discount, description, image, category, timeLeft, link } =
-    offer;
+  const {
+    title,
+    discount,
+    description,
+    image,
+    category,
+    timeLeft,
+    link,
+    price,
+    discountPrice,
+  } = offer;
   return (
     <div
       className={cn(
@@ -75,6 +86,20 @@ export default function ActiveOfferCard({
             {description}
           </p>
         </div>
+
+        {price && discountPrice && (
+          <div className="absolute bottom-[5rem] left-[1rem] right-[1rem] md:bottom-[6rem] md:left-[1.5rem] md:right-[1.5rem]">
+            <div className="flex items-center gap-4 md:gap-10">
+              <span className=" text-xl md:text-2xl font-semibold text-pink">
+                {discountPrice}.
+              </span>
+              <span className="font-semibold text-yellow text-sm md:text-base">
+                {" "}
+                previously {price}.
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="absolute bottom-[1rem] left-[1rem] right-[1rem] md:bottom-[1.5rem] md:left-[1.5rem] md:right-[1.5rem]">

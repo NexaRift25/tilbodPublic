@@ -43,6 +43,7 @@
   --radius-xl: calc(var(--radius) + 0.25rem);
   --color-dark: var(--text-dark);
   --color-yellow: var(--text-yellow);
+  --color-pink: var(--text-pink);
   --color-smoky-white: var(--text-smoky-white);
   --color-general-background: var(--general-background);
   --color-banner-background: var(--banner-background);
@@ -87,6 +88,7 @@
   --text-smoky-white: #ffffff;
   --text-dark: #1F2233;
   --text-yellow: #FFEE00;
+  --text-pink: #ED9AEA;
   --general-background: #232740;
   --banner-background: #1F2233;
   --card-background: #1F2233;
@@ -130,6 +132,7 @@
   --text-smoky-white: #ffffff;
   --text-dark: #1F2233;
   --text-yellow: #FFEE00;
+  --text-pink: #ED9AEA;
   --general-background: #232740;
   --banner-background: #1F2233;
   --card-background: #1F2233;
@@ -175,6 +178,7 @@
   --text-smoky-white: #ffffff;
   --text-dark: #1F2233;
   --text-yellow: #FFEE00;
+  --text-pink: #ED9AEA;
   --general-background: #232740;
   --banner-background: #1F2233;
   --card-background: #1F2233;
@@ -220,6 +224,7 @@
   --text-smoky-white: #ffffff;
   --text-dark: #1F2233;
   --text-yellow: #FFEE00;
+  --text-pink: #ED9AEA;
   --general-background: #232740;
   --banner-background: #1F2233;
   --card-background: #1F2233;
@@ -263,6 +268,7 @@
   --text-smoky-white: #ffffff;
   --text-dark: #1F2233;
   --text-yellow: #FFEE00;
+  --text-pink: #ED9AEA;
   --general-background: #232740;
   --banner-background: #1F2233;
   --card-background: #1F2233;

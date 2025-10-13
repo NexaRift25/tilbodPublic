@@ -11,6 +11,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "1 day left",
         location: "Tech Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -24,6 +26,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "3 days left",
         location: "Mobile Shop",
+        price: null,
+        discountPrice: "49,000kr",
         link: "https://www.google.com",
     },
     {
@@ -37,6 +41,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "5 days left",
         location: "Computer World",
+        price: "1,299,000kr",
+        discountPrice: "779,000kr",
         link: "https://www.google.com",
     },
     {
@@ -50,6 +56,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "2 days left",
         location: "Game Zone",
+        price: null,
+        discountPrice: "324,000kr",
         link: "https://www.google.com",
     },
     {
@@ -63,6 +71,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "4 days left",
         location: "Electronics Hub",
+        price: "899,000kr",
+        discountPrice: "494,000kr",
         link: "https://www.google.com",
     },
     {
@@ -76,6 +86,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "6 days left",
         location: "Audio Store",
+        price: "299,000kr",
+        discountPrice: "209,000kr",
         link: "https://www.google.com",
     },
     {
@@ -89,6 +101,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "7 days left",
         location: "Photo Pro",
+        price: null,
+        discountPrice: "1,199,000kr",
         link: "https://www.google.com",
     },
     {
@@ -102,6 +116,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "8 days left",
         location: "Wearable Tech",
+        price: null,
+        discountPrice: "251,000kr",
         link: "https://www.google.com",
     },
     
@@ -117,6 +133,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "1 day left",
         location: "Various Restaurants",
+        price: "89,000kr",
+        discountPrice: "62,000kr",
         link: "https://www.google.com",
     },
     {
@@ -130,6 +148,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "2 days left",
         location: "Pizza Palace",
+        price: null,
+        discountPrice: "23,000kr",
         link: "https://www.google.com",
     },
     {
@@ -143,6 +163,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "3 days left",
         location: "Sushi Bar",
+        price: null,
+        discountPrice: "49,000kr",
         link: "https://www.google.com",
     },
     {
@@ -156,6 +178,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "4 days left",
         location: "Burger House",
+        price: null,
+        discountPrice: "23,000kr",
         link: "https://www.google.com",
     },
     {
@@ -169,6 +193,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "5 days left",
         location: "Le Gourmet",
+        price: null,
+        discountPrice: "120,000kr",
         link: "https://www.google.com",
     },
     {
@@ -182,6 +208,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "6 days left",
         location: "Morning Cafe",
+        price: null,
+        discountPrice: "25,000kr",
         link: "https://www.google.com",
     },
     {
@@ -195,6 +223,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "7 days left",
         location: "Ocean View",
+        price: null,
+        discountPrice: "67,000kr",
         link: "https://www.google.com",
     },
     {
@@ -208,6 +238,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "8 days left",
         location: "BBQ Pit",
+        price: "55,000kr",
+        discountPrice: "36,000kr",
         link: "https://www.google.com",
     },
     {
@@ -221,6 +253,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "9 days left",
         location: "Pasta Bella",
+        price: "75,000kr",
+        discountPrice: "54,000kr",
         link: "https://www.google.com",
     },
     {
@@ -234,6 +268,8 @@ export const activeOfers = [
         categorySlug: "food-dining",
         timeLeft: "10 days left",
         location: "Sweet Treats",
+        price: "38,000kr",
+        discountPrice: "21,000kr",
         link: "https://www.google.com",
     },
 
@@ -249,6 +285,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "1 day left",
         location: "Hotel Paradise",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -262,6 +300,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "2 days left",
         location: "Grand Resort",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -275,6 +315,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "3 days left",
         location: "City Center Hotel",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -288,6 +330,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "4 days left",
         location: "Seaside Inn",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -301,6 +345,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "5 days left",
         location: "Alpine Lodge",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -314,6 +360,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "6 days left",
         location: "Country Manor",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -327,6 +375,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "7 days left",
         location: "Boutique Suites",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -340,6 +390,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "8 days left",
         location: "Family Fun Resort",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -353,6 +405,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "9 days left",
         location: "Wellness Spa Hotel",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -366,6 +420,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "10 days left",
         location: "Castle Hotel",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -379,6 +435,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "11 days left",
         location: "Romance Resort",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -392,6 +450,8 @@ export const activeOfers = [
         categorySlug: "travel-hotels",
         timeLeft: "12 days left",
         location: "Business Hotel",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -407,6 +467,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "1 day left",
         location: "Serenity Spa",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -420,6 +482,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "3 days left",
         location: "Glamour Salon",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -433,6 +497,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "5 days left",
         location: "Healing Hands",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -446,6 +512,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "7 days left",
         location: "Beauty Clinic",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -459,6 +527,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "9 days left",
         location: "Nail Boutique",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -472,6 +542,8 @@ export const activeOfers = [
         categorySlug: "health-beauty",
         timeLeft: "11 days left",
         location: "Wellness Center",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -487,6 +559,8 @@ export const activeOfers = [
         categorySlug: "sports-fitness",
         timeLeft: "2 days left",
         location: "Fitness First",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -500,6 +574,8 @@ export const activeOfers = [
         categorySlug: "sports-fitness",
         timeLeft: "4 days left",
         location: "Elite Training",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -513,6 +589,8 @@ export const activeOfers = [
         categorySlug: "sports-fitness",
         timeLeft: "6 days left",
         location: "Zen Yoga Studio",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -526,6 +604,8 @@ export const activeOfers = [
         categorySlug: "sports-fitness",
         timeLeft: "8 days left",
         location: "Aquatic Center",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -539,6 +619,8 @@ export const activeOfers = [
         categorySlug: "sports-fitness",
         timeLeft: "10 days left",
         location: "Sports Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -554,6 +636,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "1 day left",
         location: "Mega Cinema",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -567,6 +651,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "3 days left",
         location: "Concert Hall",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -580,6 +666,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "5 days left",
         location: "Grand Theater",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -593,6 +681,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "7 days left",
         location: "Adventure Park",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -606,6 +696,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "9 days left",
         location: "Strike Zone",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -619,6 +711,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "11 days left",
         location: "Mystery Rooms",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -632,6 +726,8 @@ export const activeOfers = [
         categorySlug: "entertainment",
         timeLeft: "13 days left",
         location: "Game Center",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -647,6 +743,8 @@ export const activeOfers = [
         categorySlug: "fashion",
         timeLeft: "2 days left",
         location: "Fashion Boutique",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -660,6 +758,8 @@ export const activeOfers = [
         categorySlug: "fashion",
         timeLeft: "5 days left",
         location: "Shoe Palace",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -673,6 +773,8 @@ export const activeOfers = [
         categorySlug: "fashion",
         timeLeft: "8 days left",
         location: "Accessory Hub",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -686,6 +788,8 @@ export const activeOfers = [
         categorySlug: "fashion",
         timeLeft: "11 days left",
         location: "Style Studio",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -701,6 +805,8 @@ export const activeOfers = [
         categorySlug: "home-garden",
         timeLeft: "3 days left",
         location: "Furniture Mart",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -714,6 +820,8 @@ export const activeOfers = [
         categorySlug: "home-garden",
         timeLeft: "7 days left",
         location: "Garden Center",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -727,6 +835,8 @@ export const activeOfers = [
         categorySlug: "home-garden",
         timeLeft: "10 days left",
         location: "Decor Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -743,6 +853,8 @@ export const activeOfers = [
         categorySlug: "pampering",
         timeLeft: "2 days left",
         location: "Bliss Spa Resort",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -756,6 +868,8 @@ export const activeOfers = [
         categorySlug: "pampering",
         timeLeft: "5 days left",
         location: "Stone Therapy",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -769,6 +883,8 @@ export const activeOfers = [
         categorySlug: "pampering",
         timeLeft: "8 days left",
         location: "Makeover Studio",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -782,6 +898,8 @@ export const activeOfers = [
         categorySlug: "pampering",
         timeLeft: "11 days left",
         location: "Aroma Wellness",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -797,6 +915,8 @@ export const activeOfers = [
         categorySlug: "black-friday",
         timeLeft: "1 day left",
         location: "All Stores",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -810,6 +930,8 @@ export const activeOfers = [
         categorySlug: "black-friday",
         timeLeft: "1 day left",
         location: "Department Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -823,6 +945,8 @@ export const activeOfers = [
         categorySlug: "black-friday",
         timeLeft: "1 day left",
         location: "Tech World",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -836,6 +960,8 @@ export const activeOfers = [
         categorySlug: "black-friday",
         timeLeft: "1 day left",
         location: "Fashion Mall",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -849,6 +975,8 @@ export const activeOfers = [
         categorySlug: "black-friday",
         timeLeft: "1 day left",
         location: "Appliance Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 
@@ -864,6 +992,8 @@ export const activeOfers = [
         categorySlug: "health",
         timeLeft: "4 days left",
         location: "Health Store",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -877,6 +1007,8 @@ export const activeOfers = [
         categorySlug: "health",
         timeLeft: "8 days left",
         location: "Health Tech",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
     {
@@ -890,6 +1022,8 @@ export const activeOfers = [
         categorySlug: "health",
         timeLeft: "12 days left",
         location: "Organic Market",
+        price: null,
+        discountPrice: null,
         link: "https://www.google.com",
     },
 ]
