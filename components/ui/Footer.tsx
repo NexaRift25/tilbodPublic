@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     return (
         <Container className="max-w-[118.75rem] w-[85%]">
             <footer
-                className="my-4 p-8 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background"
+                className="my-4 p-4 md:p-8 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background"
             >
                 <div className="py-6 px-4 sm:py-8 sm:px-6 md:py-10 md:px-8 lg:py-6 lg:px-12 xl:px-10">
                     {/* Top Section */}

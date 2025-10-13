@@ -25,7 +25,7 @@ export default function ViewMoreOffers() {
 
   return (
     <Container className="max-w-[118.75rem] w-[85%]">
-      <div className="my-4 p-16 space-y-12 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background">
+      <div className="my-4 p-8 lg:p-16 space-y-12 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background">
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-smoky-white">
           View More Offers
         </h2>
