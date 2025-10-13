@@ -2,7 +2,7 @@
 import { Search, User, Menu, X } from "lucide-react";
 import Container from "./Container";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuLinkButton from "./MenuLinkButton";
 import { usePathname } from "next/navigation";
@@ -13,6 +13,20 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -160,7 +174,7 @@ export default function Header() {
               damping: 50,
               duration: 0.3,
             }}
-            className="fixed inset-0 z-50 bg-banner-background lg:hidden"
+            className="fixed inset-0 z-50 bg-banner-background lg:hidden overflow-y-auto"
           >
             {/* Menu Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-primary">
