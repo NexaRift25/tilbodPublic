@@ -81,11 +81,11 @@ export default function HappyHourOfferCard({ offer, className }: HappyHourOfferC
                     {/* Action Buttons */}
                     <div className="absolute bottom-[1.5rem] left-[1.5rem] right-[1.5rem] flex flex-col gap-2">
                         {/* Available Days */}
-                        <div className="grid grid-cols-7 gap-1 md:gap-2 text-xs font-semibold">
+                        <div className="grid grid-cols-7 gap-2 text-xs font-semibold">
                             {allDays.map((day) => (
                                 <div 
                                     key={day}
-                                    className={`flex items-center justify-center m-h-[1.4375rem] m-w-[2.018rem] xl:h-[1.4375rem] 2xl:w-[3.018rem] rounded-sm ${
+                                    className={`flex items-center justify-center min-h-[1.4375rem] min-w-[2.018rem] py-1 rounded-sm ${
                                         availableDays.includes(day) ? 'bg-primary text-dark' : 'bg-card-background border border-primary text-smoky-white'
                                     }`}
                                 >
