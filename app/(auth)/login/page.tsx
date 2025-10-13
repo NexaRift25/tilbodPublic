@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Logo } from "@/components/ui/Header";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -67,23 +68,11 @@ export default function LoginPage() {
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
           <Link href="/" className="inline-block">
-            <div
-              className="bg-primary inline-flex items-center justify-center pr-5 mb-6"
-              style={{
-                height: "2.5rem",
-                width: "10rem",
-                clipPath:
-                  "polygon(0 0, calc(100% - 2rem) 0, 100% 50%, calc(100% - 2rem) 100%, 0 100%)",
-              }}
-            >
-              <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center text-lg">
-                Tilboð.is
-              </span>
-            </div>
+            <Logo />
           </Link>
-          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
+          <h1 className="text-3xl pt-2 lg:text-4xl font-bold text-white mb-2">
             Welcome Back
           </h1>
           <p className="text-gray-400 text-sm lg:text-base">

@@ -17,14 +17,14 @@ export default function Header() {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-    
+
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
@@ -57,7 +57,7 @@ export default function Header() {
           {/* Mobile Icons */}
           <div className="flex items-center gap-3">
             {/* Search Icon */}
-            <button 
+            <button
               onClick={openSearchPopup}
               className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
             >
@@ -77,9 +77,12 @@ export default function Header() {
             </button>
 
             {/* User Profile Icon */}
-            <button className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+            <Link
+              href="/login"
+              className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+            >
               <User className="w-5 h-5 text-dark border border-dark rounded-full" />
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -91,38 +94,42 @@ export default function Header() {
                 <Logo />
               </Link>
               <nav className="flex items-center gap-3 xl:gap-12 text-smoky-white font-semibold">
-                <Link 
+                <Link
                   href="/active-offers"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/active-offers" && "text-primary border-b-2 border-primary"
+                    pathname === "/active-offers" &&
+                      "text-primary border-b-2 border-primary"
                   )}
                 >
                   Active 0ffers
                 </Link>
-                <Link 
+                <Link
                   href="/weekday-specials"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/weekday-specials" && "text-primary border-b-2 border-primary"
+                    pathname === "/weekday-specials" &&
+                      "text-primary border-b-2 border-primary"
                   )}
                 >
                   Weekday specials
                 </Link>
-                <Link 
+                <Link
                   href="/happy-hour-offers"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/happy-hour-offers" && "text-primary border-b-2 border-primary"
+                    pathname === "/happy-hour-offers" &&
+                      "text-primary border-b-2 border-primary"
                   )}
                 >
                   Happy hours
                 </Link>
-                <Link 
+                <Link
                   href="/gift-certificates"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/gift-certificates" && "text-primary border-b-2 border-primary"
+                    pathname === "/gift-certificates" &&
+                      "text-primary border-b-2 border-primary"
                   )}
                 >
                   Gift certificates
@@ -150,7 +157,10 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <Link href="/login" className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl">
+              <Link
+                href="/login"
+                className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl"
+              >
                 My Page
                 <span className="text-dark border border-dark rounded-full text-base">
                   <User size={16} />
@@ -182,7 +192,7 @@ export default function Header() {
                 <MobileLogo />
               </Link>
               <div className="flex items-center gap-3">
-                <button 
+                <button
                   onClick={openSearchPopup}
                   className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
                 >
@@ -194,7 +204,10 @@ export default function Header() {
                 >
                   <X className="w-5 h-5 text-white" />
                 </button>
-                <Link href="/login" className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                <Link
+                  href="/login"
+                  className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+                >
                   <User className="w-5 h-5 text-dark border border-dark rounded-full" />
                 </Link>
               </div>
@@ -275,13 +288,13 @@ export default function Header() {
 }
 
 // Desktop Logo
-const Logo = ({ className = "" }) => {
+export const Logo = ({ className = "" }) => {
   return (
     <div
       className={`bg-primary inline-flex items-center justify-center pr-5 ${className}`}
       style={{
-        height: "2.125rem",
-        width: "8.125rem",
+        height: "2.75rem",
+        width: "9.25rem",
         clipPath:
           "polygon(0 0, calc(100% - 1.875rem) 0, 100% 50%, calc(100% - 1.875rem) 100%, 0 100%)",
       }}
@@ -294,13 +307,13 @@ const Logo = ({ className = "" }) => {
 };
 
 // Mobile Logo (Arrow-shaped like in the design)
-const MobileLogo = ({ className = "" }) => {
+export const MobileLogo = ({ className = "" }) => {
   return (
     <div
       className={`bg-primary inline-flex items-center justify-center pr-4 ${className}`}
       style={{
-        height: "2rem",
-        width: "6.875rem",
+        height: "2.50rem",
+        width: "8.125rem",
         clipPath:
           "polygon(0 0, calc(100% - 1.25rem) 0, 100% 50%, calc(100% - 1.25rem) 100%, 0 100%)",
       }}
