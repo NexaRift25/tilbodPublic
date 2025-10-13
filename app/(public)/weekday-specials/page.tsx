@@ -97,7 +97,7 @@ export default function WeeklyOffersPage() {
         <Container className="w-[86%] md:w-[86%] max-w-[1524px] mx-auto pb-[4.375rem] lg:pb-[7.5rem]">
           <Pagination
             currentPage={currentPage}
-            totalPages={totalPages}
+            totalPages={40}
             onPageChange={setCurrentPage}
           />
         </Container>

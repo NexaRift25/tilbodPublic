@@ -2,6 +2,7 @@
 
 import React from 'react'
 import FadeUpSection from './FadeUpSection'
+import { MoveLeft, MoveRight } from 'lucide-react'
 
 interface PaginationProps {
   currentPage: number
@@ -101,18 +102,7 @@ const Pagination: React.FC<PaginationProps> = ({
           }`}
           aria-label="Previous page"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <MoveLeft size={32}/>
         </button>
 
         {/* Page Numbers */}
@@ -161,18 +151,7 @@ const Pagination: React.FC<PaginationProps> = ({
           }`}
           aria-label="Next page"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+          <MoveRight size={32}/>
         </button>
       </div>
     </FadeUpSection>
