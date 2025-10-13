@@ -41,8 +41,8 @@ export const activeOfers = [
         categorySlug: "electronics",
         timeLeft: "5 days left",
         location: "Computer World",
-        price: "1,299,000kr",
-        discountPrice: "779,000kr",
+        price: "299,000kr",
+        discountPrice: "79,000kr",
         link: "https://www.google.com",
     },
     {
