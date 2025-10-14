@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Readex_Pro } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const readexPro = Readex_Pro({
   variable: "--font-readex-pro",
@@ -24,8 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${readexPro.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

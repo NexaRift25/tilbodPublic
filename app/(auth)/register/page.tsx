@@ -12,11 +12,15 @@ import {
   Phone,
   ArrowRight,
   Check,
+  Building2,
+  Shield,
 } from "lucide-react";
 import { Logo } from "@/components/ui/Header";
+import { useAuth, UserRole } from "@/contexts/AuthContext";
 
 export default function RegisterPage() {
   const router = useRouter();
+  const { register, isLoading: authLoading } = useAuth();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -24,6 +28,7 @@ export default function RegisterPage() {
     phone: "",
     password: "",
     confirmPassword: "",
+    role: "user" as UserRole,
     agreeToTerms: false,
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +36,7 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -40,6 +45,13 @@ export default function RegisterPage() {
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleRoleSelect = (role: UserRole) => {
+    setFormData((prev) => ({ ...prev, role }));
+    if (errors.role) {
+      setErrors((prev) => ({ ...prev, role: "" }));
     }
   };
 
@@ -96,14 +108,20 @@ export default function RegisterPage() {
 
     setIsLoading(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Handle successful registration - redirect to dashboard
+      await register({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        password: formData.password,
+        role: formData.role,
+      });
       console.log("Registration successful", formData);
-      router.push("/dashboard");
+      // AuthContext handles redirection
     } catch (error) {
       console.error("Registration failed", error);
+      setErrors({ general: "Registration failed. Please try again." });
     } finally {
       setIsLoading(false);
     }
@@ -134,7 +152,62 @@ export default function RegisterPage() {
 
         {/* Registration Form */}
         <div className="bg-card-background border border-primary rounded-2xl p-6 lg:p-8">
+          {/* General Error */}
+          {errors.general && (
+            <div className="bg-red-500/10 border border-red-500 rounded-lg p-3 mb-6">
+              <p className="text-red-500 text-sm">{errors.general}</p>
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Role Selection */}
+            <div>
+              <label className="text-gray-400 text-sm mb-3 block">
+                I want to register as:
+              </label>
+              <div className="grid grid-cols-3 gap-3">
+                <button
+                  type="button"
+                  onClick={() => handleRoleSelect("user")}
+                  className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                    formData.role === "user"
+                      ? "bg-primary/10 border-primary text-primary"
+                      : "bg-background border-primary/30 text-gray-400 hover:bg-primary/5"
+                  }`}
+                >
+                  <User size={20} />
+                  <span className="text-xs font-medium">Customer</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleRoleSelect("company")}
+                  className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                    formData.role === "company"
+                      ? "bg-primary/10 border-primary text-primary"
+                      : "bg-background border-primary/30 text-gray-400 hover:bg-primary/5"
+                  }`}
+                >
+                  <Building2 size={20} />
+                  <span className="text-xs font-medium">Company</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleRoleSelect("admin")}
+                  className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                    formData.role === "admin"
+                      ? "bg-red-500/10 border-red-500 text-red-500"
+                      : "bg-background border-primary/30 text-gray-400 hover:bg-red-500/5"
+                  }`}
+                >
+                  <Shield size={20} />
+                  <span className="text-xs font-medium">Admin</span>
+                </button>
+              </div>
+              {errors.role && (
+                <p className="text-red-500 text-xs mt-2">{errors.role}</p>
+              )}
+            </div>
+
             {/* Name Fields */}
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -412,10 +485,10 @@ export default function RegisterPage() {
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || authLoading}
               className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-dark font-semibold rounded-lg hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? (
+              {(isLoading || authLoading) ? (
                 <div className="w-5 h-5 border-2 border-dark border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>

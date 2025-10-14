@@ -2,21 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, ArrowRight, User, Building2, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/ui/Header";
+import { useAuth, UserRole } from "@/contexts/AuthContext";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { login, loginWithGoogle, isLoading: authLoading } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    role: "user" as UserRole,
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
@@ -51,14 +54,12 @@ export default function LoginPage() {
 
     setIsLoading(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Handle successful login - redirect to dashboard
+      await login(formData.email, formData.password, formData.role);
       console.log("Login successful", formData);
-      router.push("/dashboard");
     } catch (error) {
       console.error("Login failed", error);
+      setErrors({ general: "Invalid email or password" });
     } finally {
       setIsLoading(false);
     }
@@ -82,7 +83,59 @@ export default function LoginPage() {
 
         {/* Login Form */}
         <div className="bg-card-background border border-primary rounded-2xl p-6 lg:p-8">
+          {/* Role Selection */}
+          <div className="mb-6">
+            <label className="text-gray-400 text-sm mb-3 block">
+              I am a:
+            </label>
+            <div className="grid grid-cols-3 gap-3">
+              <button
+                type="button"
+                onClick={() => setFormData(prev => ({ ...prev, role: "user" }))}
+                className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                  formData.role === "user"
+                    ? "bg-primary/10 border-primary text-primary"
+                    : "bg-background border-primary/30 text-gray-400 hover:bg-primary/5"
+                }`}
+              >
+                <User size={20} />
+                <span className="text-xs font-medium">Customer</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormData(prev => ({ ...prev, role: "company" }))}
+                className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                  formData.role === "company"
+                    ? "bg-primary/10 border-primary text-primary"
+                    : "bg-background border-primary/30 text-gray-400 hover:bg-primary/5"
+                }`}
+              >
+                <Building2 size={20} />
+                <span className="text-xs font-medium">Company</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormData(prev => ({ ...prev, role: "admin" }))}
+                className={`flex flex-col items-center gap-2 p-3 rounded-lg border transition-all ${
+                  formData.role === "admin"
+                    ? "bg-red-500/10 border-red-500 text-red-500"
+                    : "bg-background border-primary/30 text-gray-400 hover:bg-red-500/5"
+                }`}
+              >
+                <Shield size={20} />
+                <span className="text-xs font-medium">Admin</span>
+              </button>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* General Error */}
+            {errors.general && (
+              <div className="bg-red-500/10 border border-red-500 rounded-lg p-3">
+                <p className="text-red-500 text-sm">{errors.general}</p>
+              </div>
+            )}
+
             {/* Email Field */}
             <div>
               <label
@@ -174,10 +227,10 @@ export default function LoginPage() {
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || authLoading}
               className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-dark font-semibold rounded-lg hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? (
+              {(isLoading || authLoading) ? (
                 <div className="w-5 h-5 border-2 border-dark border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>
@@ -197,7 +250,12 @@ export default function LoginPage() {
 
           {/* Social Login */}
           <div className="space-y-3">
-            <button className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-background border border-primary/30 text-white rounded-lg hover:bg-primary/10 transition-all">
+            <button
+              type="button"
+              onClick={() => loginWithGoogle(formData.role)}
+              disabled={authLoading || isLoading}
+              className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-background border border-primary/30 text-white rounded-lg hover:bg-primary/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -218,7 +276,11 @@ export default function LoginPage() {
               </svg>
               Continue with Google
             </button>
-            <button className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-background border border-primary/30 text-white rounded-lg hover:bg-primary/10 transition-all">
+            <button
+              type="button"
+              className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-background border border-primary/30 text-white rounded-lg hover:bg-primary/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={authLoading || isLoading}
+            >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
