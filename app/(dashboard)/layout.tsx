@@ -3,10 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { User, Menu, X, LogOut, Search } from "lucide-react";
+import { User, Menu, X, LogOut, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Container from "@/components/ui/Container";
+import { Logo, MobileLogo } from "@/components/ui/Header";
 
 export default function DashboardLayout({
   children,
@@ -56,10 +57,15 @@ export default function DashboardLayout({
 
           {/* Mobile Icons */}
           <div className="flex items-center gap-3">
-            {/* Search Icon */}
-            <button className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors">
-              <Search className="w-5 h-5 text-primary" />
-            </button>
+            {/* Home Icon */}
+            <Link
+              href="/"
+              className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
+            >
+              <Home className="w-5 h-5 text-primary" />
+            </Link>
+
+           
 
             {/* Menu Icon */}
             <button
@@ -109,6 +115,13 @@ export default function DashboardLayout({
 
             <div className="flex items-center gap-4">
               <Link
+                href="/"
+                className="text-primary transition-colors p-2"
+                title="Go to Home"
+              >
+                <Home size={20} />
+              </Link>
+              <Link
                 href="/dashboard/profile"
                 className="whitespace-nowrap flex items-center gap-3 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl hover:bg-primary/90 transition-all"
               >
@@ -146,9 +159,14 @@ export default function DashboardLayout({
                 <MobileLogo />
               </Link>
               <div className="flex items-center gap-3">
-                <button className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors">
-                  <Search className="w-5 h-5 text-primary" />
-                </button>
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
+                >
+                  <Home className="w-5 h-5 text-primary" />
+                </Link>
+                
                 <button
                   onClick={closeMenu}
                   className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
@@ -188,7 +206,7 @@ export default function DashboardLayout({
               </nav>
 
               {/* User Info and Logout */}
-              <div className="space-y-4 pt-12 border-t border-primary/30">
+              <div className="space-y-4 pt-12">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                     <User size={24} className="text-dark" />
@@ -211,47 +229,9 @@ export default function DashboardLayout({
       {/* Main Content */}
       <Container className="max-w-[118.75rem] w-[85%] mx-auto">
         <main className="min-h-[calc(100vh-4rem)]">
-          <div className="p-6 lg:p-8">{children}</div>
+          <div className="p-0 py-6 lg:p-8">{children}</div>
         </main>
       </Container>
     </div>
   );
 }
-
-// Desktop Logo
-const Logo = ({ className = "" }: { className?: string }) => {
-  return (
-    <div
-      className={`bg-primary inline-flex items-center justify-center pr-5 ${className}`}
-      style={{
-        height: "2.125rem",
-        width: "8.125rem",
-        clipPath:
-          "polygon(0 0, calc(100% - 1.875rem) 0, 100% 50%, calc(100% - 1.875rem) 100%, 0 100%)",
-      }}
-    >
-      <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center">
-        Tilboð.is
-      </span>
-    </div>
-  );
-};
-
-// Mobile Logo
-const MobileLogo = ({ className = "" }: { className?: string }) => {
-  return (
-    <div
-      className={`bg-primary inline-flex items-center justify-center pr-4 ${className}`}
-      style={{
-        height: "2rem",
-        width: "6.875rem",
-        clipPath:
-          "polygon(0 0, calc(100% - 1.25rem) 0, 100% 50%, calc(100% - 1.25rem) 100%, 0 100%)",
-      }}
-    >
-      <span className="text-dark font-extrabold whitespace-nowrap flex items-center justify-center w-full h-full text-center text-sm">
-        Tilboð.is
-      </span>
-    </div>
-  );
-};

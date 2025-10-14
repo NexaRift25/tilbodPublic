@@ -68,7 +68,7 @@ export default function CartPage() {
   return (
     <div className="space-y-4 lg:space-y-6">
       {/* Header */}
-      <div className="px-4 lg:px-0">
+      <div className=" lg:px-0">
         <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1">
           Shopping Cart
         </h1>
@@ -79,7 +79,7 @@ export default function CartPage() {
 
       {cartItems.length === 0 ? (
         // Empty Cart
-        <div className="bg-card-background border border-primary rounded-2xl p-8 lg:p-12 text-center mx-4 lg:mx-0">
+        <div className="bg-card-background border border-primary rounded-2xl lg:p-12 text-center mx-4 lg:mx-0">
           <ShoppingBag className="mx-auto text-gray-400 mb-4" size={48} />
           <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
             Your cart is empty
@@ -94,7 +94,7 @@ export default function CartPage() {
       ) : (
         <div className="space-y-6 lg:space-y-0">
           {/* Mobile/Tablet: Stack vertically */}
-          <div className="lg:hidden space-y-4 px-4">
+          <div className="lg:hidden space-y-4">
             {cartItems.map((item) => (
               <div
                 key={item.id}
@@ -336,7 +336,7 @@ export default function CartPage() {
           </div>
 
           {/* Mobile/Tablet Order Summary */}
-          <div className="lg:hidden mx-4">
+          <div className="lg:hidden ">
             <div className="bg-card-background border border-primary rounded-2xl p-4">
               <h2 className="text-lg font-bold text-white mb-4">Order Summary</h2>
 
