@@ -130,7 +130,7 @@ export default function DashboardLayout({
                   <User size={16} />
                 </span>
               </Link>
-              <button className="text-gray-400 hover:text-red-500 transition-colors p-2">
+              <button className="text-primary hover:text-red-500 transition-colors p-2">
                 <LogOut size={20} />
               </button>
             </div>
@@ -184,16 +184,16 @@ export default function DashboardLayout({
             </div>
 
             {/* Menu Content */}
-            <div className="flex flex-col px-14 py-10">
+            <div className="flex flex-col px-6 sm:px-10 md:px-14 py-6 sm:py-8 md:py-10">
               {/* Main Navigation Links */}
-              <nav className="flex-1 flex flex-col gap-8">
+              <nav className="flex-1 flex flex-col gap-6 sm:gap-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={closeMenu}
                     className={cn(
-                      "text-smoky-white text-2xl font-semibold hover:text-primary transition-colors flex items-center gap-3",
+                      "text-smoky-white text-xl sm:text-2xl font-semibold hover:text-primary transition-colors flex items-center gap-3",
                       pathname === item.href && "text-primary"
                     )}
                   >
@@ -206,18 +206,18 @@ export default function DashboardLayout({
               </nav>
 
               {/* User Info and Logout */}
-              <div className="space-y-4 pt-12">
+              <div className="space-y-4 pt-8 sm:pt-12">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <User size={24} className="text-dark" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center">
+                    <User size={20} className="text-dark sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <p className="text-white font-semibold">John Doe</p>
-                    <p className="text-gray-400 text-sm">john@example.com</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">John Doe</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">john@example.com</p>
                   </div>
                 </div>
-                <button className="flex items-center gap-3 text-red-500 hover:text-red-400 font-semibold text-lg transition-colors">
-                  <LogOut size={20} />
+                <button className="flex items-center gap-3 text-red-500 hover:text-red-400 font-semibold text-base sm:text-lg transition-colors">
+                  <LogOut size={18} className="sm:w-5 sm:h-5" />
                   Logout
                 </button>
               </div>
@@ -227,9 +227,9 @@ export default function DashboardLayout({
       </AnimatePresence>
 
       {/* Main Content */}
-      <Container className="max-w-[118.75rem] w-[85%] mx-auto">
+      <Container className="max-w-[118.75rem] w-[95%] sm:w-[90%] lg:w-[85%] mx-auto">
         <main className="min-h-[calc(100vh-4rem)]">
-          <div className="p-0 py-6 lg:p-8">{children}</div>
+          <div className="px-2 py-4 sm:px-4 sm:py-6 lg:p-8">{children}</div>
         </main>
       </Container>
     </div>

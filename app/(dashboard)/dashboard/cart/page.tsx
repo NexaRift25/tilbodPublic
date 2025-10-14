@@ -66,43 +66,43 @@ export default function CartPage() {
   const total = subtotal + tax;
 
   return (
-    <div className="space-y-4 lg:space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className=" lg:px-0">
-        <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1">
+      <div>
+        <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1">
           Shopping Cart
         </h1>
-        <p className="text-gray-400 text-sm lg:text-base">
+        <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
           {cartItems.length} {cartItems.length === 1 ? "item" : "items"} in your cart
         </p>
       </div>
 
       {cartItems.length === 0 ? (
         // Empty Cart
-        <div className="bg-card-background border border-primary rounded-2xl lg:p-12 text-center mx-4 lg:mx-0">
-          <ShoppingBag className="mx-auto text-gray-400 mb-4" size={48} />
-          <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">
+        <div className="bg-card-background border border-primary rounded-2xl p-8 sm:p-10 lg:p-12 text-center">
+          <ShoppingBag className="mx-auto text-gray-400 mb-4" size={40} />
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
             Your cart is empty
           </h2>
-          <p className="text-gray-400 mb-6 text-sm lg:text-base">
+          <p className="text-gray-400 mb-6 text-xs sm:text-sm lg:text-base">
             Browse our offers and add items to your cart
           </p>
-          <button className="px-6 py-3 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all">
+          <button className="px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all text-sm sm:text-base">
             Browse Offers
           </button>
         </div>
       ) : (
-        <div className="space-y-6 lg:space-y-0">
+        <div className="space-y-4 sm:space-y-6 lg:space-y-0">
           {/* Mobile/Tablet: Stack vertically */}
-          <div className="lg:hidden space-y-4">
+          <div className="lg:hidden space-y-3 sm:space-y-4">
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-card-background border border-primary rounded-2xl p-4"
+                className="bg-card-background border border-primary rounded-2xl p-3 sm:p-4"
               >
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4">
                   {/* Image */}
-                  <div className="relative w-20 h-20 rounded-xl overflow-hidden border border-primary flex-shrink-0">
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-primary flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -115,13 +115,13 @@ export default function CartPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-white font-bold text-base mb-1 truncate">
+                        <h3 className="text-white font-bold text-sm sm:text-base mb-1 truncate">
                           {item.name}
                         </h3>
-                        <p className="text-primary text-sm mb-1">
+                        <p className="text-primary text-xs sm:text-sm mb-1">
                           {item.category}
                         </p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-gray-400 text-[10px] sm:text-xs">
                           Valid until: {item.validUntil}
                         </p>
                       </div>
@@ -130,41 +130,41 @@ export default function CartPage() {
                         className="text-red-500 hover:text-red-400 p-1 hover:bg-red-500/10 rounded transition-all flex-shrink-0"
                         aria-label="Remove item"
                       >
-                        <Trash2 size={18} />
+                        <Trash2 size={16} className="sm:w-[18px] sm:h-[18px]" />
                       </button>
                     </div>
 
                     {/* Quantity and Price */}
-                    <div className="flex items-center justify-between mt-3">
-                      <div className="flex items-center gap-2 bg-background border border-primary/30 rounded-lg p-1">
+                    <div className="flex items-center justify-between mt-2 sm:mt-3">
+                      <div className="flex items-center gap-1.5 sm:gap-2 bg-background border border-primary/30 rounded-lg p-0.5 sm:p-1">
                         <button
                           onClick={() =>
                             updateQuantity(item.id, item.quantity - 1)
                           }
-                          className="p-1.5 hover:bg-primary/10 rounded text-primary transition-all"
+                          className="p-1 sm:p-1.5 hover:bg-primary/10 rounded text-primary transition-all"
                           aria-label="Decrease quantity"
                         >
-                          <Minus size={14} />
+                          <Minus size={12} className="sm:w-[14px] sm:h-[14px]" />
                         </button>
-                        <span className="text-white font-semibold min-w-[1.5rem] text-center text-sm">
+                        <span className="text-white font-semibold min-w-[1.25rem] sm:min-w-[1.5rem] text-center text-xs sm:text-sm">
                           {item.quantity}
                         </span>
                         <button
                           onClick={() =>
                             updateQuantity(item.id, item.quantity + 1)
                           }
-                          className="p-1.5 hover:bg-primary/10 rounded text-primary transition-all"
+                          className="p-1 sm:p-1.5 hover:bg-primary/10 rounded text-primary transition-all"
                           aria-label="Increase quantity"
                         >
-                          <Plus size={14} />
+                          <Plus size={12} className="sm:w-[14px] sm:h-[14px]" />
                         </button>
                       </div>
                       <div className="text-right">
-                        <p className="text-white text-lg font-bold">
+                        <p className="text-white text-base sm:text-lg font-bold">
                           {(item.price * item.quantity).toLocaleString()} kr.
                         </p>
                         {item.quantity > 1 && (
-                          <p className="text-gray-400 text-xs">
+                          <p className="text-gray-400 text-[10px] sm:text-xs">
                             {item.price.toLocaleString()} kr. each
                           </p>
                         )}
