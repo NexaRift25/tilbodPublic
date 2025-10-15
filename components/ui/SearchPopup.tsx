@@ -57,7 +57,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
 
           {/* Search Popup */}
           <motion.div
-            className={`max-w-[1728px] w-[80%] absolute left-1/2 -translate-x-1/2 top-[100px] bottom-4 border border-primary rounded-[20px] z-50 flex flex-col bg-[#1f2233] ${className}`}
+            className={`max-w-[1728px] w-[92%] md:w-[80%] absolute left-1/2 -translate-x-1/2 top-[100px] bottom-4 border border-primary rounded-[20px] z-50 flex flex-col bg-[#1f2233] ${className}`}
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
