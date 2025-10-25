@@ -25,8 +25,8 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
   }
 
   return (
-    <div className="min-h-screen py-8 theme-orange">
-      <Container className="max-w-[118.75rem] w-[86%] mx-auto py-24">
+    <div className="min-h-screen py-8 ">
+      <Container className="max-w-[118.75rem] w-[86%] mx-auto py-24 theme-orange">
         {/* Main Card Container */}
         <div className="overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-8">
