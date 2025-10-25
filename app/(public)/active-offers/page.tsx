@@ -13,10 +13,33 @@ import { activeOfers } from "@/data/activeOfers";
 import { injectAdAtPosition, isAdPlaceholder } from "@/utils/injectAds";
 import { useState } from "react";
 
+interface FilterState {
+  sort: string;
+  category: string;
+  location: string;
+  when: string;
+}
+
 export default function ActiveOffersPage() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 2; // You have 2 sections
+
+  // Filter state
+  const [filters, setFilters] = useState<FilterState>({
+    sort: "",
+    category: "",
+    location: "",
+    when: "",
+  });
+
+  // Handle filter changes
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+    // Reset to first page when filters change
+    setCurrentPage(1);
+    // Here you would typically filter your data based on the new filters
+    console.log("Active Offers filters changed:", newFilters);
+  };
 
   // Dynamically inject ad at position 4 (5th position in grid)
   const itemsWithAd = injectAdAtPosition(activeOfers.slice(0, 8), 4);
@@ -29,18 +52,12 @@ export default function ActiveOffersPage() {
         <CategoryCardWraper />
       </div>
       <Container className="w-[86%] md:w-[90%] lg:w-[86%] max-w-[112rem] mx-auto pb-24">
-        <div className="pb-16">
-          <OfferFillter
-            offerType="Active Offers"
-            selectedFilters={[
-              "Electronics",
-              "Entertainment",
-              "Baby Products",
-              "Black Friday",
-              "Pampering",
-            ]}
-          />
-        </div>
+          <div className="pb-16">
+            <OfferFillter
+              offerType="Active Offers"
+              onFilterChange={handleFilterChange}
+            />
+          </div>
         {/* justify-items-center centers cards in their grid cells, gap-6 maintains 24px spacing */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center">
           {itemsWithAd.map((item, index) => {
