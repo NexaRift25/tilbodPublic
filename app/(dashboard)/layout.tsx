@@ -102,7 +102,7 @@ export default function DashboardLayout({
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "transition-colors hover:text-primary",
+                      "transition-colors hover:text-primary text-xs sm:text-sm xl:text-xl",
                       pathname === item.href &&
                         "text-primary border-b-2 border-primary"
                     )}
@@ -213,7 +213,7 @@ export default function DashboardLayout({
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm sm:text-base">John Doe</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">john@example.com</p>
+                    <p className="text-gray-400 text-xs sm:text-sm lg:text-base">john@example.com</p>
                   </div>
                 </div>
                 <button className="flex items-center gap-3 text-red-500 hover:text-red-400 font-semibold text-base sm:text-lg transition-colors">

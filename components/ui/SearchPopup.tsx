@@ -80,7 +80,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                   <Link
                     href="/happy-hour-offers"
                     onClick={onClose}
-                    className="w-full sm:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[16px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
+                    className="w-full sm:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[18px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
                   >
                     Skoða síðu
                     <MoveRight className="text-2xl sm:text-[36px]" />
@@ -95,12 +95,12 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto px-4 sm:px-5">
               <div className="w-full space-y-3 sm:space-y-5">
-                {filteredOffers.map((offer) => (
+                {filteredOffers?.map((offer) => (
                   <div
                     key={offer.id}
                     className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4 border border-primary p-4 sm:p-5 rounded-[20px]"
                   >
-                    <div className="flex items-start gap-3 sm:gap-6 flex-1">
+                    <div className="flex items-center gap-3 sm:gap-6 flex-1">
                       {/* Image */}
                       <Image
                         src={offer.image}
@@ -112,7 +112,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
 
                       {/* Bar Info */}
                       <div>
-                        <p className="text-white text-xs font-bold">
+                        <p className="text-white text-sm md:text-base font-bold">
                           {'status' in offer ? offer.status : "Open now"}
                         </p>
                         <h3 className="text-white text-base sm:text-lg font-bold">
@@ -122,10 +122,10 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
 
                       {/* Price */}
                       <div>
-                        <p className="text-white text-sm font-bold">
+                        <p className="text-white text-sm md:text-base font-bold">
                           {'discount' in offer ? offer.discount : 'pricing' in offer ? offer.pricing : "Verð"}
                         </p>
-                        <p className="text-primary text-xs font-bold">
+                        <p className="text-primary text-xs sm:text-sm lg:text-base font-bold">
                           {'price' in offer ? offer.price : 'pricing' in offer ? offer.pricing : "800kr. bjór / 1000kr. vín"}
                         </p>
                       </div>
@@ -133,7 +133,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
 
                     {/* Time and Days */}
                     <div className="flex flex-col items-start lg:items-end gap-2">
-                      <p className="text-white text-xs font-bold">
+                      <p className="text-white text-xs sm:text-sm lg:text-base font-bold">
                         Gildir {'time' in offer ? offer.time : 'timeLeft' in offer ? offer.timeLeft : "19:00 - 21:00"}
                       </p>
                       <div className="flex flex-wrap items-center gap-1">
@@ -141,10 +141,10 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                           dayNames.map((day) => (
                             <p
                               key={day}
-                              className={`rounded w-[32px] h-[16px] text-center text-xs font-semibold ${
+                              className={`rounded w-[32px] h-[18px] theme-green text-center text-sm font-semibold ${
                                 offer.availableDays.some((d: string) => d.toLowerCase().includes(day.toLowerCase().substring(0, 3)))
-                                  ? "text-dark bg-green-500"
-                                  : "text-gray-400 bg-gray-700"
+                                  ? "text-dark bg-primary"
+                                  : "text-gray-400 theme-green bg-gray-700"
                               }`}
                             >
                               {day}
@@ -154,7 +154,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                           dayNames.map((day) => (
                             <p
                               key={day}
-                              className="text-dark bg-green-500 rounded w-[32px] h-[16px] text-center text-xs font-semibold"
+                              className="text-dark theme-green bg-primry rounded w-[32px] h-[16px] text-center text-base font-semibold"
                             >
                               {day}
                             </p>
@@ -167,7 +167,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                     <Link
                       href={`/${offer.type === "happy-hour" ? "happy-hour-offers" : offer.type === "gift" ? "gift-certificates" : offer.type === "weekly" ? "weekday-specials" : "active-offers"}`}
                       onClick={onClose}
-                      className="w-full lg:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[16px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
+                      className="w-full lg:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[18px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
                     >
                       Skoða tilboð
                       <MoveRight className="text-xl sm:text-2xl" />

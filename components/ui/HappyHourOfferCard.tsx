@@ -81,7 +81,7 @@ export default function HappyHourOfferCard({ offer, className }: HappyHourOfferC
                     {/* Action Buttons */}
                     <div className="absolute bottom-[1.5rem] left-[1.5rem] right-[1.5rem] flex flex-col gap-2">
                         {/* Available Days */}
-                        <div className="grid grid-cols-7 gap-2 text-xs font-semibold">
+                        <div className="grid grid-cols-7 gap-2 text-xs sm:text-sm lg:text-base font-semibold">
                             {allDays.map((day) => (
                                 <div 
                                     key={day}

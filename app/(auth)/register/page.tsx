@@ -164,7 +164,7 @@ export default function RegisterPage() {
                   />
                 </div>
                 {errors.firstName && (
-                  <p className="text-red-500 text-xs mt-1">
+                  <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">
                     {errors.firstName}
                   </p>
                 )}
@@ -196,7 +196,7 @@ export default function RegisterPage() {
                   />
                 </div>
                 {errors.lastName && (
-                  <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
+                  <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.lastName}</p>
                 )}
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function RegisterPage() {
                 />
               </div>
               {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.email}</p>
               )}
             </div>
 
@@ -261,7 +261,7 @@ export default function RegisterPage() {
                 />
               </div>
               {errors.phone && (
-                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.phone}</p>
               )}
             </div>
 
@@ -300,26 +300,26 @@ export default function RegisterPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.password}</p>
               )}
             </div>
 
             {/* Password Requirements */}
             {formData.password && (
               <div className="bg-background border border-primary/20 rounded-lg p-3">
-                <p className="text-gray-400 text-xs mb-2">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2">
                   Password requirements:
                 </p>
-                <div className="space-y-1">
+                <div className="space-y-1 theme-green">
                   {passwordRequirements.map((req, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <Check
                         size={14}
-                        className={req.met ? "text-green-500" : "text-gray-500"}
+                        className={req.met ? "text-primary" : "text-gray-500"}
                       />
                       <span
-                        className={`text-xs ${
-                          req.met ? "text-green-500" : "text-gray-500"
+                        className={`text-xs sm:text-sm lg:text-base ${
+                          req.met ? "text-primary" : "text-gray-500"
                         }`}
                       >
                         {req.text}
@@ -369,7 +369,7 @@ export default function RegisterPage() {
                 </button>
               </div>
               {errors.confirmPassword && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">
                   {errors.confirmPassword}
                 </p>
               )}
@@ -403,7 +403,7 @@ export default function RegisterPage() {
                 </span>
               </label>
               {errors.agreeToTerms && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">
                   {errors.agreeToTerms}
                 </p>
               )}

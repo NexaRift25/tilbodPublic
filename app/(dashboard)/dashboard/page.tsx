@@ -84,7 +84,7 @@ export default function DashboardPage() {
                   <Icon className="text-primary" size={20} />
                 </div>
                 <span
-                  className={`text-xs sm:text-sm font-semibold ${
+                  className={`text-xs sm:text-sm lg:text-base font-semibold ${
                     stat.changeType === "positive"
                       ? "text-green-500"
                       : "text-red-500"
@@ -93,7 +93,7 @@ export default function DashboardPage() {
                   {stat.change}
                 </span>
               </div>
-              <h3 className="text-gray-400 text-xs sm:text-sm mb-1">{stat.name}</h3>
+              <h3 className="text-gray-400 text-xs sm:text-sm lg:text-base mb-1">{stat.name}</h3>
               <p className="text-white text-xl sm:text-2xl font-bold">{stat.value}</p>
             </div>
           );
@@ -104,7 +104,7 @@ export default function DashboardPage() {
       <div className="bg-card-background border border-primary rounded-2xl p-4 sm:p-6">
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <h2 className="text-lg sm:text-xl font-bold text-white">Recent Orders</h2>
-          <button className="text-primary hover:text-primary/80 font-medium text-xs sm:text-sm">
+          <button className="text-primary hover:text-primary/80 font-medium text-xs md:text-sm lg:text-xl border border-primary rounded-4xl px-4 py-1">
             View All
           </button>
         </div>
@@ -117,18 +117,18 @@ export default function DashboardPage() {
             >
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-semibold mb-1 text-sm sm:text-base truncate">{order.name}</h3>
-                <p className="text-gray-400 text-xs sm:text-sm">{order.date}</p>
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base">{order.date}</p>
               </div>
               <div className="flex items-center justify-between sm:justify-end gap-4 sm:gap-6">
                 <div className="sm:text-right sm:mr-6">
-                  <p className="text-white font-bold text-sm sm:text-base">{order.amount}</p>
+                  <p className="text-white font-bold text-sm md:text-base">{order.amount}</p>
                 </div>
-                <div>
+                <div className="theme-green">
                   <span
-                    className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
+                    className={`px-2 sm:px-3 py-1 rounded-full text-xs md:text-sm lg:text-base font-semibold whitespace-nowrap ${
                       order.status === "Completed"
-                        ? "bg-green-500/10 text-green-500"
-                        : "bg-yellow-500/10 text-yellow-500"
+                        ? "bg-green-500/10 text-primary"
+                        : "bg-yellow-500/10 text-yellow"
                     }`}
                   >
                     {order.status}

@@ -111,7 +111,7 @@ export default function LoginPage() {
                 />
               </div>
               {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.email}</p>
               )}
             </div>
 
@@ -150,7 +150,7 @@ export default function LoginPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.password}</p>
               )}
             </div>
 

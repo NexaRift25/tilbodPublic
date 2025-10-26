@@ -190,7 +190,7 @@ export default function OfferFillter({
             </button>
 
             {/* Dropdown Menu */}
-            <div className={`absolute top-full left-0 mt-2 w-[298px] bg-card-background border border-primary rounded-[16px] shadow-lg z-50 max-h-60 overflow-y-auto transition-all duration-300 ease-in-out ${
+            <div className={`absolute top-full left-0 mt-2 w-[298px] bg-card-background border border-primary rounded-[16px] shadow-lg z-50 max-h-60 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] transition-all duration-300 ease-in-out ${
               activeDropdown === filterType 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'

@@ -121,7 +121,7 @@ export default function CartPage() {
                         <p className="text-primary text-xs sm:text-sm mb-1">
                           {item.category}
                         </p>
-                        <p className="text-gray-400 text-[10px] sm:text-xs">
+                        <p className="text-gray-400 text-[10px] sm:text-xs lg:text-base">
                           Valid until: {item.validUntil}
                         </p>
                       </div>
@@ -146,7 +146,7 @@ export default function CartPage() {
                         >
                           <Minus size={12} className="sm:w-[14px] sm:h-[14px]" />
                         </button>
-                        <span className="text-white font-semibold min-w-[1.25rem] sm:min-w-[1.5rem] text-center text-xs sm:text-sm">
+                        <span className="text-white font-semibold min-w-[1.25rem] sm:min-w-[1.5rem] text-center text-xs sm:text-sm lg:text-base">
                           {item.quantity}
                         </span>
                         <button
@@ -164,7 +164,7 @@ export default function CartPage() {
                           {(item.price * item.quantity).toLocaleString()} kr.
                         </p>
                         {item.quantity > 1 && (
-                          <p className="text-gray-400 text-[10px] sm:text-xs">
+                          <p className="text-gray-400 text-[10px] sm:text-xs lg:text-base">
                             {item.price.toLocaleString()} kr. each
                           </p>
                         )}
@@ -206,7 +206,7 @@ export default function CartPage() {
                           <p className="text-primary text-sm mb-1">
                             {item.category}
                           </p>
-                          <p className="text-gray-400 text-xs">
+                          <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                             Valid until: {item.validUntil}
                           </p>
                         </div>
@@ -249,7 +249,7 @@ export default function CartPage() {
                             {(item.price * item.quantity).toLocaleString()} kr.
                           </p>
                           {item.quantity > 1 && (
-                            <p className="text-gray-400 text-xs">
+                            <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                               {item.price.toLocaleString()} kr. each
                             </p>
                           )}
@@ -324,10 +324,10 @@ export default function CartPage() {
 
                 {/* Additional Info */}
                 <div className="mt-6 space-y-2 text-center">
-                  <p className="text-gray-400 text-xs">
+                  <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                     🔒 Secure checkout with SSL encryption
                   </p>
-                  <p className="text-gray-400 text-xs">
+                  <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                     💳 Multiple payment methods accepted
                   </p>
                 </div>
@@ -396,10 +396,10 @@ export default function CartPage() {
 
               {/* Additional Info */}
               <div className="mt-4 space-y-1 text-center">
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                   🔒 Secure checkout with SSL encryption
                 </p>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                   💳 Multiple payment methods accepted
                 </p>
               </div>
