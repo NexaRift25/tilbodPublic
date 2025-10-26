@@ -74,11 +74,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
 
               {/* Action Buttons */}
               <div className="flex xl:flex-row flex-col gap-4 w-full">
-                <button className="flex justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
+                <button className="flex cursor-pointer hover:bg-primary/10 active:scale-95 hover:text-primary transition-colors duration-300 justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
                   <span>Gift Certificate</span>
                   <MoveRight size={32} />
                 </button>
-                <button className="flex justify-between max-w-[250px] w-full gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
+                <button className="flex cursor-pointer hover:bg-primary/10 active:scale-95 hover:text-primary transition-colors duration-300 justify-between max-w-[250px] w-full gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
                   <span>Add to cart</span>
                   <MoveRight size={32} />
                 </button>
