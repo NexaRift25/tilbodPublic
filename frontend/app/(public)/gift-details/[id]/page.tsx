@@ -7,6 +7,7 @@ import { giftOfers } from "@/data/giftOfers";
 import Container from "@/components/ui/Container";
 import Footer from "@/components/ui/Footer";
 import { use } from "react";
+import ViewMoreOffers from "@/components/ui/ViewMoreOffers";
 
 interface GiftDetailsPageProps {
   params: Promise<{
@@ -31,7 +32,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
         <div className="overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Section - Content */}
-            <div className="flex flex-col justify-between space-y-6">
+            <div className="flex flex-col justify-between space-y-6 order-2 lg:order-1">
               {/* Offer Tag */}
               <div className="max-w-[322px] w-full whitespace-nowrap justify-center inline-flex items-center px-4 py-2 rounded-[32px] border border-primary">
                 <span className="text-white text-2xl font-medium">
@@ -40,7 +41,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
               </div>
 
               {/* Main Title */}
-              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase tracking-wide">
+              <h1 className="text-white text-[1.875rem] lg:text-[4rem] font-bold uppercase tracking-wide">
                 {giftOffer.category}
               </h1>
 
@@ -85,7 +86,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
             </div>
 
             {/* Right Section - Image */}
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <div className="relative rounded-3xl w-full border border-primary max-w-[719px] max-h-[632px] aspect-[719/632] mx-auto">
                 <Image
                   src={giftOffer.image}
@@ -98,7 +99,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
             </div>
           </div>
         </div>
+       
       </Container>
+      <div className="theme-orange pb-10">
+          <ViewMoreOffers/>
+        </div>
       <Footer />
     </div>
   );
