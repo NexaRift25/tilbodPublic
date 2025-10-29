@@ -13,10 +13,33 @@ import { giftOfers } from "@/data/giftOfers";
 import { injectAdAtPosition, isAdPlaceholder } from "@/utils/injectAds";
 import { useState } from "react";
 
+interface FilterState {
+  sort: string;
+  category: string;
+  location: string;
+  when: string;
+}
+
 export default function GiftCardOffersPage() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 2; // You have 2 sections
+
+  // Filter state
+  const [filters, setFilters] = useState<FilterState>({
+    sort: "",
+    category: "",
+    location: "",
+    when: "",
+  });
+
+  // Handle filter changes
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+    // Reset to first page when filters change
+    setCurrentPage(1);
+    // Here you would typically filter your data based on the new filters
+    console.log("Gift Certificates filters changed:", newFilters);
+  };
 
   // Dynamically inject ad at position 4 (5th position in grid)
   const itemsWithAd = injectAdAtPosition(giftOfers.slice(0, 8), 4);
@@ -33,13 +56,7 @@ export default function GiftCardOffersPage() {
           <div className="pb-16">
             <OfferFillter
               offerType="Gift Certificates"
-              selectedFilters={[
-                "Electronics",
-                "Entertainment",
-                "Baby Products",
-                "Black Friday",
-                "Pampering",
-              ]}
+              onFilterChange={handleFilterChange}
             />
           </div>
           {/* justify-items-center centers cards in their grid cells, gap-6 maintains 24px spacing */}

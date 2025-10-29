@@ -59,7 +59,6 @@ export default function SingleCategoryPage({ params }: SingleCategoryPageProps) 
         <div className="pb-16">
           <OfferFillter
             offerType={`${category.name} Offers`}
-            selectedFilters={[id]}
           />
         </div>
 

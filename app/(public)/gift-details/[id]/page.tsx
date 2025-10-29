@@ -7,6 +7,7 @@ import { giftOfers } from "@/data/giftOfers";
 import Container from "@/components/ui/Container";
 import Footer from "@/components/ui/Footer";
 import { use } from "react";
+import ViewMoreOffers from "@/components/ui/ViewMoreOffers";
 
 interface GiftDetailsPageProps {
   params: Promise<{
@@ -25,13 +26,13 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
   }
 
   return (
-    <div className="min-h-screen py-8 theme-orange">
-      <Container className="max-w-[118.75rem] w-[86%] mx-auto py-24">
+    <div className="min-h-screen py-8 ">
+      <Container className="max-w-[118.75rem] w-[86%] mx-auto py-24 theme-orange">
         {/* Main Card Container */}
         <div className="overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Section - Content */}
-            <div className="flex flex-col justify-between space-y-6">
+            <div className="flex flex-col justify-between space-y-6 order-2 lg:order-1">
               {/* Offer Tag */}
               <div className="max-w-[322px] w-full whitespace-nowrap justify-center inline-flex items-center px-4 py-2 rounded-[32px] border border-primary">
                 <span className="text-white text-2xl font-medium">
@@ -40,7 +41,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
               </div>
 
               {/* Main Title */}
-              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase tracking-wide">
+              <h1 className="text-white text-[1.875rem] lg:text-[4rem] font-bold uppercase tracking-wide">
                 {giftOffer.category}
               </h1>
 
@@ -73,11 +74,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
 
               {/* Action Buttons */}
               <div className="flex xl:flex-row flex-col gap-4 w-full">
-                <button className="flex justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
+                <button className="flex cursor-pointer hover:bg-primary/10 active:scale-95 hover:text-primary transition-colors duration-300 justify-between max-w-[322px] w-full py-2 text-dark bg-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
                   <span>Gift Certificate</span>
                   <MoveRight size={32} />
                 </button>
-                <button className="flex justify-between max-w-[250px] w-full gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
+                <button className="flex cursor-pointer hover:bg-primary/10 active:scale-95 hover:text-primary transition-colors duration-300 justify-between max-w-[250px] w-full gap-4 py-2 whitespace-nowrap text-primary rounded-[56px] text-xl 2xl:text-2xl items-center font-semibold border border-primary px-8">
                   <span>Add to cart</span>
                   <MoveRight size={32} />
                 </button>
@@ -85,7 +86,7 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
             </div>
 
             {/* Right Section - Image */}
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <div className="relative rounded-3xl w-full border border-primary max-w-[719px] max-h-[632px] aspect-[719/632] mx-auto">
                 <Image
                   src={giftOffer.image}
@@ -98,7 +99,11 @@ export default function GiftDetailsPage({ params }: GiftDetailsPageProps) {
             </div>
           </div>
         </div>
+       
       </Container>
+      <div className="theme-orange pb-10">
+          <ViewMoreOffers/>
+        </div>
       <Footer />
     </div>
   );

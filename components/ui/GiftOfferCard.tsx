@@ -74,7 +74,7 @@ export default function GiftOfferCard({
           <div className="pointer-events-none flex-1">
             <div className="border-b border-primary">
               {/* Category */}
-              <div className="text-xs font-semibold sm:text-base text-yellow">
+              <div className="text-xs sm:text-sm lg:text-base font-semibold text-yellow">
                 {"/gift-certificates" !== pathname
                   ? category
                   : purchaseCount + " have taken advantage of the offer"}{" "}

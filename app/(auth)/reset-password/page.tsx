@@ -180,7 +180,7 @@ export default function ResetPasswordPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{errors.password}</p>
               )}
             </div>
 

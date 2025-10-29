@@ -124,7 +124,7 @@ export default function ForgotPasswordPage() {
               </Link>
             </div>
 
-            <p className="text-gray-400 text-xs mt-6">
+            <p className="text-gray-400 text-xs sm:text-sm lg:text-base mt-6">
               Didn&apos;t receive the email? Check your spam folder or{" "}
               <button
                 onClick={handleResendEmail}
@@ -195,7 +195,7 @@ export default function ForgotPasswordPage() {
                 />
               </div>
               {error && (
-                <p className="text-red-500 text-xs mt-1">{error}</p>
+                <p className="text-red-500 text-xs sm:text-sm lg:text-base mt-1">{error}</p>
               )}
             </div>
 

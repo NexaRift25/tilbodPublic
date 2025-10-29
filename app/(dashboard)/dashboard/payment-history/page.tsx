@@ -242,7 +242,7 @@ export default function PaymentHistoryPage() {
                     <div className="flex items-center gap-2">
                       {getStatusIcon(transaction.status)}
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-semibold capitalize ${getStatusBadge(
+                        className={`px-3 py-1 rounded-full text-xs sm:text-sm lg:text-base font-semibold capitalize ${getStatusBadge(
                           transaction.status
                         )}`}
                       >
@@ -265,14 +265,14 @@ export default function PaymentHistoryPage() {
                   <p className="text-white font-semibold mb-1">
                     {transaction.name}
                   </p>
-                  <p className="text-primary font-mono text-xs">
+                  <p className="text-primary font-mono text-xs sm:text-sm lg:text-base">
                     {transaction.id}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
                   {getStatusIcon(transaction.status)}
                   <span
-                    className={`px-2 py-1 rounded-full text-xs font-semibold capitalize ${getStatusBadge(
+                    className={`px-2 py-1 rounded-full text-xs sm:text-sm lg:text-base font-semibold capitalize ${getStatusBadge(
                       transaction.status
                     )}`}
                   >

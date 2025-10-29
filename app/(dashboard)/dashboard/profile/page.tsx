@@ -104,10 +104,10 @@ export default function ProfilePage() {
                     <h3 className="text-white font-semibold mb-1 text-sm lg:text-base">
                       Profile Picture
                     </h3>
-                    <p className="text-gray-400 text-xs lg:text-sm mb-2">
+                    <p className="text-gray-400 text-xs lg:text-sm sm:text-base mb-2">
                       JPG, PNG or GIF. Max size 2MB
                     </p>
-                    <button className="text-primary hover:text-primary/80 text-xs lg:text-sm font-medium">
+                    <button className="text-primary hover:text-primary/80 text-xs sm:text-sm lg:text-base font-medium">
                       Upload new photo
                     </button>
                   </div>
@@ -116,7 +116,7 @@ export default function ProfilePage() {
                 {/* Form Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       First Name
                     </label>
                     <input
@@ -128,7 +128,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       Last Name
                     </label>
                     <input
@@ -140,7 +140,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       <Mail className="inline mr-2" size={14} />
                       Email Address
                     </label>
@@ -153,7 +153,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       <Phone className="inline mr-2" size={14} />
                       Phone Number
                     </label>
@@ -166,7 +166,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       <MapPin className="inline mr-2" size={14} />
                       Address
                     </label>
@@ -179,7 +179,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       City
                     </label>
                     <input
@@ -191,7 +191,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       Postal Code
                     </label>
                     <input
@@ -224,7 +224,7 @@ export default function ProfilePage() {
 
                 <div className="space-y-4 lg:space-y-6">
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       Current Password
                     </label>
                     <input
@@ -234,7 +234,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       New Password
                     </label>
                     <input
@@ -244,7 +244,7 @@ export default function ProfilePage() {
                     />
                   </div>
                   <div>
-                    <label className="text-gray-400 text-xs lg:text-sm mb-2 block">
+                    <label className="text-gray-400 text-xs sm:text-sm lg:text-base mb-2 block">
                       Confirm New Password
                     </label>
                     <input
@@ -259,7 +259,7 @@ export default function ProfilePage() {
                   <h3 className="text-white font-semibold mb-2 text-sm lg:text-base">
                     Password Requirements
                   </h3>
-                  <ul className="text-gray-400 text-xs lg:text-sm space-y-1">
+                  <ul className="text-gray-400 text-xs sm:text-sm lg:text-base space-y-1">
                     <li>• At least 8 characters</li>
                     <li>• Include uppercase and lowercase letters</li>
                     <li>• Include at least one number</li>
@@ -277,7 +277,7 @@ export default function ProfilePage() {
                   <h3 className="text-white font-semibold mb-3 lg:mb-4 text-sm lg:text-base">
                     Two-Factor Authentication
                   </h3>
-                  <p className="text-gray-400 text-xs lg:text-sm mb-3 lg:mb-4">
+                  <p className="text-gray-400 text-xs sm:text-sm lg:text-base mb-3 lg:mb-4">
                     Add an extra layer of security to your account
                   </p>
                   <button className="w-full sm:w-auto px-4 lg:px-6 py-2 lg:py-3 bg-primary/20 text-primary font-semibold rounded-full hover:bg-primary/30 transition-all text-sm lg:text-base">
@@ -325,7 +325,7 @@ export default function ProfilePage() {
                         <h3 className="text-white font-semibold mb-1 text-sm lg:text-base">
                           {item.title}
                         </h3>
-                        <p className="text-gray-400 text-xs lg:text-sm">
+                        <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                           {item.description}
                         </p>
                       </div>
@@ -390,12 +390,12 @@ export default function ProfilePage() {
                           <h3 className="text-white font-semibold text-sm lg:text-base">
                             {card.type} •••• {card.last4}
                           </h3>
-                          <p className="text-gray-400 text-xs lg:text-sm">
+                          <p className="text-gray-400 text-xs sm:text-sm lg:text-base">
                             Expires {card.expiry}
                           </p>
                         </div>
                         {card.default && (
-                          <span className="px-2 lg:px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
+                          <span className="px-2 lg:px-3 py-1 bg-primary/20 text-primary text-xs sm:text-sm lg:text-base font-semibold rounded-full">
                             Default
                           </span>
                         )}

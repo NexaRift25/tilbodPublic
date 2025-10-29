@@ -23,6 +23,19 @@ export default function ViewMoreOffers() {
     },
   ];
 
+  // Check if current page is gift-details
+  const isGiftDetailsPage = pathname?.startsWith('/gift-details');
+  
+  // Filter out the current page or gift-certificates when on gift-details page
+  const filteredPaths = offerPaths.filter(path => {
+    // If on gift-details page, exclude gift-certificates
+    if (isGiftDetailsPage && path.path === '/gift-certificates') {
+      return false;
+    }
+    // Exclude current page
+    return path.path !== pathname;
+  });
+
   return (
     <Container className="max-w-[118.75rem] w-[85%]">
       <div className="my-4 p-8 lg:p-16 space-y-12 sm:my-6 lg:my-8 rounded-[3rem] border border-solid border-primary bg-card-background">
@@ -30,17 +43,14 @@ export default function ViewMoreOffers() {
           View More Offers
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[90%] 2xl:w-[70%]">
-          {offerPaths.map(
-            (path, index) =>
-              path.path !== pathname && (
-                <MenuLinkButton
-                  key={index}
-                  nav={{ title: path.title, link: path.path }}
-                  isActive={false}
-                  onClick={() => {}}
-                />
-              )
-          )}
+          {filteredPaths.map((path, index) => (
+            <MenuLinkButton
+              key={index}
+              nav={{ title: path.title, link: path.path }}
+              isActive={false}
+              onClick={() => {}}
+            />
+          ))}
         </div>
       </div>
     </Container>
