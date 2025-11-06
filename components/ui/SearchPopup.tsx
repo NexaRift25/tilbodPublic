@@ -10,6 +10,7 @@ import { giftOfers } from "@/data/giftOfers";
 import { happyHourOfers } from "@/data/happyHourOfers";
 import { weeklyOfers } from "@/data/weeklyOfers";
 import AnimatedLineButton from "./AnimatedLineButton";
+import { useTranslations } from 'next-intl';
 
 interface SearchPopupProps {
   isOpen: boolean;
@@ -22,6 +23,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
   onClose,
   className = "",
 }) => {
+  const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState("");
 
   const dayNames = ["Mán", "Þri", "Mið", "Fim", "Fös", "Lau", "Sun"];
@@ -81,23 +83,23 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
             {/* Search Header */}
             <div className="w-full flex-shrink-0">
               <div className=" m-4">
-                <p className="text-white text-lg font-bold mb-3">Search</p>
+                <p className="text-white text-lg font-bold mb-3">{t('search.search')}</p>
                 <div className="bg-general-background flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-2 border border-primary/50 p-4 rounded-[20px]">
                   <h2 className="text-white text-lg sm:text-[24px] lg:text-3xl font-bold">
-                    Happy hour tilboð
+                    {t('search.happyHourTilbod')}
                   </h2>
                   <Link
                     href="/happy-hour-offers"
                     onClick={onClose}
                     className="w-full sm:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[18px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
                   >
-                    Skoða síðu
+                    {t('search.viewPage')}
                     <MoveRight className="text-2xl sm:text-[36px]" />
                   </Link>
                 </div>
               </div>
               <p className="text-white text-xs font-bold px-4 sm:px-4 py-1">
-                Tilboð
+                {t('search.offers')}
               </p>
             </div>
 
@@ -122,7 +124,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                       {/* Bar Info */}
                       <div className="w-[20%]">
                         <p className="text-white text-sm font-bold">
-                          {"status" in offer ? offer.status : "Open now"}
+                          {"status" in offer ? offer.status : t('search.openNow')}
                         </p>
                         <h3 className="text-white text-base sm:text-lg font-bold">
                           {offer.title}
@@ -131,7 +133,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
 
                       {/* Price */}
                       <div className="w-[30%]">
-                        <p className="text-white text-sm font-bold">Verð</p>
+                        <p className="text-white text-sm font-bold">{t('search.price')}</p>
                         <p className="text-primary text-xs sm:text-sm lg:text-base font-bold">
                           {"price" in offer
                             ? offer.price
@@ -143,7 +145,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                       {/* Time and Days */}
                       <div className="flex flex-col items-start gap-2">
                         <p className="text-white text-xs sm:text-sm font-bold">
-                          Gildir{" "}
+                          {t('search.valid')}{" "}
                           {"time" in offer
                             ? offer.time
                             : "timeLeft" in offer
@@ -196,7 +198,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
                       onClick={onClose}
                       className="w-full lg:w-[220px] flex items-center justify-between text-primary text-sm sm:text-[18px] font-bold border border-primary rounded-[32px] px-3 sm:px-4 py-2 hover:bg-primary hover:text-dark transition-colors"
                     >
-                      Skoða tilboð
+                      {t('search.viewOffer')}
                       <MoveRight className="text-xl sm:text-2xl" />
                     </Link>
                   </div>
@@ -207,7 +209,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({
             {/* Footer - View All Button */}
             <div className="w-full flex-shrink-0 px-4 sm:px-5 py-4 bg-banner-background rounded-b-[20px]">
               <div className="w-fit py-2">
-                <AnimatedLineButton category="active offers" />
+                <AnimatedLineButton category={t('offers.activeOffers')} />
               </div>
             </div>
           </motion.div>
