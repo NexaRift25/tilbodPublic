@@ -71,7 +71,7 @@ export default function LanguageSwitcher() {
       <button
         onClick={() => !isLoading && setIsOpen(!isOpen)}
         disabled={isLoading}
-        className="flex items-center gap-2 px-3 py-2 border border-primary rounded-lg bg-transparent hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="relative flex items-center gap-2 px-3 py-2 border border-primary rounded-lg bg-transparent hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Switch language"
       >
         {isLoading ? (
@@ -82,6 +82,12 @@ export default function LanguageSwitcher() {
         <span className="text-primary text-xs sm:text-sm font-semibold hidden sm:inline">
           {isLoading ? t('common.loading') : (languageNames[locale] || locale.toUpperCase())}
         </span>
+        {/* Language Code Badge */}
+        {!isLoading && (
+          <span className="absolute -top-1.5 -right-1.5 bg-primary text-dark text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+            {locale.toUpperCase()}
+          </span>
+        )}
       </button>
 
       {isOpen && !isLoading && (

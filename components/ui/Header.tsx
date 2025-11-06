@@ -59,6 +59,9 @@ export default function Header() {
 
           {/* Mobile Icons */}
           <div className="flex items-center gap-3">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+            
             {/* Search Icon */}
             <button
               onClick={openSearchPopup}
@@ -190,32 +193,33 @@ export default function Header() {
             }}
             className="fixed inset-0 z-50 bg-banner-background lg:hidden overflow-y-auto"
           >
-            {/* Menu Header */}
-            <div className="flex items-center justify-between px-4 py-4 border-b border-primary">
-              <Link href="/" onClick={closeMenu}>
-                <MobileLogo />
-              </Link>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={openSearchPopup}
-                  className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
-                >
-                  <Search className="w-5 h-5 text-primary" />
-                </button>
-                <button
-                  onClick={closeMenu}
-                  className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
-                >
-                  <X className="w-5 h-5 text-white" />
-                </button>
-                <Link
-                  href="/login"
-                  className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
-                >
-                  <User className="w-5 h-5 text-dark border border-dark rounded-full" />
-                </Link>
-              </div>
-            </div>
+                {/* Menu Header */}
+                <div className="flex items-center justify-between px-4 py-4 border-b border-primary">
+                  <Link href="/" onClick={closeMenu}>
+                    <MobileLogo />
+                  </Link>
+                  <div className="flex items-center gap-3">
+                    <LanguageSwitcher />
+                    <button
+                      onClick={openSearchPopup}
+                      className="w-10 h-10 border border-primary rounded-lg flex items-center justify-center bg-transparent hover:bg-primary/10 transition-colors"
+                    >
+                      <Search className="w-5 h-5 text-primary" />
+                    </button>
+                    <button
+                      onClick={closeMenu}
+                      className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
+                    >
+                      <X className="w-5 h-5 text-white" />
+                    </button>
+                    <Link
+                      href="/login"
+                      className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+                    >
+                      <User className="w-5 h-5 text-dark border border-dark rounded-full" />
+                    </Link>
+                  </div>
+                </div>
 
             {/* Menu Content */}
             <div className="flex flex-col px-14 py-10">
