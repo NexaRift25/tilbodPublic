@@ -1,11 +1,15 @@
+"use client";
+
 import { MoveRight } from "lucide-react";
+import { useTranslations } from 'next-intl';
 // import Image from "next/image";
 
 const AnimatedLineButton = ({ category }: { category: string }) => {
+  const t = useTranslations();
   return (
     <div className="line_button relative flex cursor-pointer items-center gap-4 text-white transition-colors hover:text-primary xl:pr-[8.5625rem]">
       <div className="line_button_content text-lg font-semibold md:text-2xl">
-        View all {category}
+        {t('common.viewAll')} {category}
       </div>
 
       {/* <Image

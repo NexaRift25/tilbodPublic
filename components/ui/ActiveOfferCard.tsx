@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import AnimatedButton from "./AnimatedButton";
+import { useTranslations } from 'next-intl';
 
 interface Offer {
   id: number;
@@ -25,6 +26,7 @@ export default function ActiveOfferCard({
   offer,
   className,
 }: ActiveOfferCardProps) {
+  const t = useTranslations();
   const {
     title,
     discount,
@@ -95,7 +97,7 @@ export default function ActiveOfferCard({
               </span>
               <span className="font-semibold text-yellow text-sm md:text-base">
                 {" "}
-                previously {price}.
+                {t('common.previously')} {price}.
               </span>
             </div>
           </div>

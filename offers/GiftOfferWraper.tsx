@@ -1,11 +1,15 @@
+"use client";
+
 import AdCard from "@/components/ui/AdCard";
 import AnimatedLineButton from "@/components/ui/AnimatedLineButton";
 import GiftOfferCard from "@/components/ui/GiftOfferCard";
 import ScrollableCarousel from "@/components/ui/ScrollableCarousel";
 import { giftOfers } from "@/data/giftOfers";
 import { injectAds, isAdPlaceholder } from "@/utils/injectAds";
+import { useTranslations } from 'next-intl';
 
 export default function GiftOfferWraper() {
+    const t = useTranslations();
     // Inject ads after every 4th item (positions 3, 7, 11, etc.)
     const adPositions = Array.from(
         { length: Math.floor(giftOfers.length / 4) },
@@ -17,10 +21,10 @@ export default function GiftOfferWraper() {
         <div className="w-full lg:py-[6.25rem] py-[3rem]">
             <div className="flex justify-between items-center lg:py-[2.3rem] py-[1rem]">
                 <h2 className="lg:text-5xl text-2xl font-semibold text-smoky-white">
-                    Gift Certificate
+                    {t('offers.giftCertificate')}
                 </h2>
                 <div className="theme-orange hidden md:block">
-                    <AnimatedLineButton category="gift certificate" />
+                    <AnimatedLineButton category={t('offers.giftCertificate')} />
                 </div>
             </div>
 
@@ -49,7 +53,7 @@ export default function GiftOfferWraper() {
                 })}
             </ScrollableCarousel>
             <div className="block md:hidden theme-orange">
-                <AnimatedLineButton category="gift certificate" />
+                <AnimatedLineButton category={t('offers.giftCertificate')} />
             </div>
         </div>
     )

@@ -1,11 +1,15 @@
+"use client";
+
 import ActiveOfferCard from "@/components/ui/ActiveOfferCard";
 import AdCard from "@/components/ui/AdCard";
 import AnimatedLineButton from "@/components/ui/AnimatedLineButton";
 import ScrollableCarousel from "@/components/ui/ScrollableCarousel";
 import { activeOfers } from "@/data/activeOfers";
 import { injectAds, isAdPlaceholder } from "@/utils/injectAds";
+import { useTranslations } from 'next-intl';
 
 export default function ActiveOfferWraper() {
+  const t = useTranslations();
   // Inject ads after every 4th item (positions 3, 7, 11, etc.)
   const adPositions = Array.from(
     { length: Math.floor(activeOfers.length / 4) },
@@ -17,10 +21,10 @@ export default function ActiveOfferWraper() {
     <div className="w-full">
       <div className="flex justify-between items-center lg:py-[2.3rem] py-[1rem]">
         <h2 className="lg:text-5xl text-2xl font-semibold text-smoky-white">
-          Active Offers
+          {t('offers.activeOffers')}
         </h2>
         <div className="hidden md:block">
-          <AnimatedLineButton category="active offers" />
+          <AnimatedLineButton category={t('offers.activeOffers')} />
         </div>
       </div>
       <ScrollableCarousel gap=" gap-4 md:gap-6" className="pr-0">
@@ -48,7 +52,7 @@ export default function ActiveOfferWraper() {
         })}
       </ScrollableCarousel>
       <div className="block md:hidden">
-        <AnimatedLineButton category="active offers" />
+        <AnimatedLineButton category={t('offers.activeOffers')} />
       </div>
     </div>
   );

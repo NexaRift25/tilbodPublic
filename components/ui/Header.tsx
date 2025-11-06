@@ -8,8 +8,11 @@ import MenuLinkButton from "./MenuLinkButton";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import SearchPopup from "./SearchPopup";
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
@@ -98,41 +101,41 @@ export default function Header() {
                   href="/active-offers"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/active-offers" &&
+                    pathname?.includes("/active-offers") &&
                       "text-primary border-b-2 border-primary"
                   )}
                 >
-                  Active 0ffers
+                  {t('navigation.activeOffers')}
                 </Link>
                 <Link
                   href="/weekday-specials"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/weekday-specials" &&
+                    pathname?.includes("/weekday-specials") &&
                       "text-primary border-b-2 border-primary"
                   )}
                 >
-                  Weekday specials
+                  {t('navigation.weekdaySpecials')}
                 </Link>
                 <Link
                   href="/happy-hour-offers"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/happy-hour-offers" &&
+                    pathname?.includes("/happy-hour-offers") &&
                       "text-primary border-b-2 border-primary"
                   )}
                 >
-                  Happy hours
+                  {t('navigation.happyHours')}
                 </Link>
                 <Link
                   href="/gift-certificates"
                   className={cn(
                     "transition-colors hover:text-primary",
-                    pathname === "/gift-certificates" &&
+                    pathname?.includes("/gift-certificates") &&
                       "text-primary border-b-2 border-primary"
                   )}
                 >
-                  Gift certificates
+                  {t('navigation.giftCertificates')}
                 </Link>
               </nav>
             </div>
@@ -142,7 +145,7 @@ export default function Header() {
                 <div className="relative flex items-center">
                   <input
                     type="search"
-                    placeholder="Search"
+                    placeholder={t('common.search')}
                     onClick={openSearchPopup}
                     readOnly
                     className="w-full border border-primary px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-2 text-xs sm:text-sm lg:text-base text-white rounded-3xl bg-transparent outline-none placeholder:text-white focus:border-primary focus:ring-0 cursor-pointer placeholder:font-semibold group-hover:placeholder:text-dark transition-all"
@@ -156,12 +159,13 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
               <Link
                 href="/login"
                 className="whitespace-nowrap flex items-center gap-6 font-semibold bg-primary text-dark px-4 py-1.5 rounded-3xl"
               >
-                My Page
+                {t('common.myPage')}
                 <span className="text-dark border border-dark rounded-full text-base">
                   <User size={16} />
                 </span>
@@ -218,29 +222,29 @@ export default function Header() {
               {/* Main Navigation Links */}
               <nav className="flex-1 flex flex-col gap-8">
                 <MenuLinkButton
-                  nav={{ title: "Active offers", link: "/active-offers" }}
-                  isActive={pathname === "/active-offers"}
+                  nav={{ title: t('navigation.activeOffers'), link: "/active-offers" }}
+                  isActive={pathname?.includes("/active-offers") || false}
                   onClick={closeMenu}
                 />
                 <MenuLinkButton
-                  nav={{ title: "Weekday specials", link: "/weekday-specials" }}
-                  isActive={pathname === "/weekday-specials"}
+                  nav={{ title: t('navigation.weekdaySpecials'), link: "/weekday-specials" }}
+                  isActive={pathname?.includes("/weekday-specials") || false}
                   onClick={closeMenu}
                 />
                 <MenuLinkButton
                   nav={{
-                    title: "Happy hour offers",
+                    title: t('navigation.happyHours'),
                     link: "/happy-hour-offers",
                   }}
-                  isActive={pathname === "/happy-hour-offers"}
+                  isActive={pathname?.includes("/happy-hour-offers") || false}
                   onClick={closeMenu}
                 />
                 <MenuLinkButton
                   nav={{
-                    title: "Gift certificates",
+                    title: t('navigation.giftCertificates'),
                     link: "/gift-certificates",
                   }}
-                  isActive={pathname === "/gift-certificates"}
+                  isActive={pathname?.includes("/gift-certificates") || false}
                   onClick={closeMenu}
                 />
               </nav>
@@ -252,28 +256,28 @@ export default function Header() {
                   onClick={closeMenu}
                   className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
-                  Skilmálar
+                  {t('footer.terms')}
                 </Link>
                 <Link
                   href="/"
                   onClick={closeMenu}
                   className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
-                  Persónuvernd
+                  {t('footer.privacy')}
                 </Link>
                 <Link
                   href="/"
                   onClick={closeMenu}
                   className="block text-smoky-white text-base hover:text-yellow-400 transition-colors"
                 >
-                  Um okkur
+                  {t('footer.about')}
                 </Link>
                 <Link
                   href="/"
                   onClick={closeMenu}
                   className="block text-smoky-white text-sm hover:text-yellow-400 transition-colors"
                 >
-                  Auglýsa á Tilboð.is
+                  {t('footer.advertise')}
                 </Link>
               </div>
             </div>

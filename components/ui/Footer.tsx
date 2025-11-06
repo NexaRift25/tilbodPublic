@@ -1,10 +1,13 @@
+"use client";
 
 import { Mail } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import Container from './Container'
+import { useTranslations } from 'next-intl'
 
 const Footer: React.FC = () => {
+  const t = useTranslations();
 
     return (
         <Container className="max-w-[118.75rem] w-[85%]">
@@ -20,25 +23,25 @@ const Footer: React.FC = () => {
                                 href="#"
                                 className="text-sm text-smoky-white transition-colors hover:text-primary sm:text-base"
                             >
-                                Terms and conditions
+                                {t('footer.terms')}
                             </a>
                             <a
                                 href="#"
                                 className="text-sm text-smoky-white transition-colors hover:text-primary sm:text-base"
                             >
-                                Privacy
+                                {t('footer.privacy')}
                             </a>
                             <a
                                 href="#"
                                 className="text-sm text-smoky-white transition-colors hover:text-primary sm:text-base"
                             >
-                                About us
+                                {t('footer.about')}
                             </a>
                             <a
                                 href="#"
                                 className="text-sm text-smoky-white transition-colors hover:text-primary sm:text-base"
                             >
-                                Advertise on Tilbod.is
+                                {t('footer.advertise')}
                             </a>
                         </div>
 
@@ -50,7 +53,7 @@ const Footer: React.FC = () => {
                                 <div className="">
                                     <input
                                         type="email"
-                                        placeholder="Sign up for the mailing list"
+                                        placeholder={t('common.signUpForMailingList')}
                                         className="w-full rounded-t-[1.25rem] lg:rounded-l-full lg:rounded-tr-none border border-solid border-primary bg-general-background py-2 sm:py-2.5 pl-3 sm:pl-4 md:pl-10 pr-10 text-sm sm:text-base text-smoky-white placeholder-smoky-white focus:border-transparent focus:outline-none lg:w-[28rem]"
                                     />
                                     <Mail
@@ -61,7 +64,7 @@ const Footer: React.FC = () => {
                             <button
                                 className="whitespace-nowrap lg:ml-1 lg:max-w-[9rem] bg-primary rounded-b-[1.25rem] lg:rounded-r-full lg:rounded-l-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 text-sm sm:text-base font-medium text-dark transition-colors hover:opacity-90 lg:w-[28rem]"
                             >
-                                Register me
+                                {t('common.registerMe')}
                             </button>
                         </div>
                     </div>
@@ -70,7 +73,7 @@ const Footer: React.FC = () => {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 sm:pt-6">
                         {/* Copyright */}
                         <div className="text-xs sm:text-sm font-bold text-smoky-white">
-                            © 2023 Tilbod.is
+                            {t('common.copyright')}
                         </div>
 
                         {/* Social Media Icons */}

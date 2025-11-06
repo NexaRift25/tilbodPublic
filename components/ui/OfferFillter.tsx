@@ -1,5 +1,8 @@
+"use client";
+
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useTranslations } from 'next-intl';
 
 interface FilterState {
   sort: string;
@@ -17,17 +20,27 @@ export default function OfferFillter({
   offerType,
   onFilterChange,
 }: OfferFillterProps) {
+  const t = useTranslations();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   // Set default filters based on offer type
   const getDefaultFilters = () => {
+    const activeOffers = t('offers.activeOffers');
+    const giftCertificates = t('offers.giftCertificates');
+    const weekdaySpecials = t('offers.weekdaySpecials');
+    const happyHourOffers = t('offers.happyHourOffers');
+    
     switch (offerType) {
       case "Active Offers":
+      case activeOffers:
         return { sort: "popular", category: "all", location: "", when: "" };
       case "Gift Certificates":
+      case giftCertificates:
         return { sort: "popular", category: "all", location: "", when: "" };
       case "Weekday Specials":
+      case weekdaySpecials:
         return { sort: "", category: "all", location: "", when: "today" };
       case "Happy Hour Offers":
+      case happyHourOffers:
         return { sort: "", category: "", location: "", when: "now" };
       default:
         return { sort: "", category: "", location: "", when: "" };
@@ -56,78 +69,87 @@ export default function OfferFillter({
 
   // Define filter options based on offer type
   const getFilterOptions = () => {
+    const activeOffers = t('offers.activeOffers');
+    const giftCertificates = t('offers.giftCertificates');
+    const weekdaySpecials = t('offers.weekdaySpecials');
+    const happyHourOffers = t('offers.happyHourOffers');
+    
     switch (offerType) {
       case "Active Offers":
+      case activeOffers:
         return {
           sort: [
-            { value: "popular", label: "Most popular (Vinsælast)" },
-            { value: "price-low", label: "Price low (Verð; lægsta)" },
-            { value: "price-high", label: "Price high (Verð; hæsta)" },
-            { value: "newest", label: "Newest offer (Nýjast)" },
-            { value: "last-chance", label: "Last chance (Síðasti séns)" },
-            { value: "highest-discount", label: "Highest discount (Hæsti afsláttur)" },
+            { value: "popular", label: t('filters.mostPopular') },
+            { value: "price-low", label: t('filters.priceLow') },
+            { value: "price-high", label: t('filters.priceHigh') },
+            { value: "newest", label: t('filters.newestOffer') },
+            { value: "last-chance", label: t('filters.lastChance') },
+            { value: "highest-discount", label: t('filters.highestDiscount') },
           ],
           category: [
-            { value: "all", label: "All offers (Tilboðstegund)" },
-            { value: "spa", label: "Spa" },
-            { value: "hotel", label: "Hotel" },
-            { value: "restaurants", label: "Restaurants" },
-            { value: "activity", label: "Activity" },
+            { value: "all", label: t('filters.allOffers') },
+            { value: "spa", label: t('filters.spa') },
+            { value: "hotel", label: t('filters.hotel') },
+            { value: "restaurants", label: t('filters.restaurants') },
+            { value: "activity", label: t('filters.activity') },
           ],
         };
       case "Gift Certificates":
+      case giftCertificates:
         return {
           sort: [
-            { value: "popular", label: "Most popular (Vinsælast)" },
-            { value: "price-low", label: "Price low (Verð; lægsta)" },
-            { value: "price-high", label: "Price high (Verð; hæsta)" },
-            { value: "newest", label: "Newest offer (Nýjast)" },
-            { value: "last-chance", label: "Last chance (Síðasti séns)" },
+            { value: "popular", label: t('filters.mostPopular') },
+            { value: "price-low", label: t('filters.priceLow') },
+            { value: "price-high", label: t('filters.priceHigh') },
+            { value: "newest", label: t('filters.newestOffer') },
+            { value: "last-chance", label: t('filters.lastChance') },
           ],
           category: [
-            { value: "all", label: "All offers (Tilboðstegund)" },
-            { value: "spa", label: "Spa" },
-            { value: "hotel", label: "Hotel" },
-            { value: "restaurants", label: "Restaurants" },
-            { value: "activity", label: "Activity" },
+            { value: "all", label: t('filters.allOffers') },
+            { value: "spa", label: t('filters.spa') },
+            { value: "hotel", label: t('filters.hotel') },
+            { value: "restaurants", label: t('filters.restaurants') },
+            { value: "activity", label: t('filters.activity') },
           ],
         };
       case "Weekday Specials":
+      case weekdaySpecials:
         return {
           when: [
-            { value: "today", label: "Today (Í dag)" },
-            { value: "now", label: "Now (Í gangi núna)" },
-            { value: "lunch", label: "Lunch time (Í hádeginu)" },
-            { value: "tonight", label: "Tonight (Í kvöld)" },
+            { value: "today", label: t('filters.today') },
+            { value: "now", label: t('filters.now') },
+            { value: "lunch", label: t('filters.lunchTime') },
+            { value: "tonight", label: t('filters.tonight') },
           ],
           category: [
-            { value: "all", label: "All offers (Öll tilboð)" },
-            { value: "food", label: "Food (Matur)" },
-            { value: "activity", label: "Activity (Afþreying)" },
+            { value: "all", label: t('filters.allOffersWeekday') },
+            { value: "food", label: t('filters.food') },
+            { value: "activity", label: t('filters.activity') },
           ],
           location: [
-            { value: "near-me", label: "Near me" },
-            { value: "capital", label: "Capital area" },
-            { value: "south", label: "South Iceland" },
-            { value: "north", label: "North Iceland" },
-            { value: "east", label: "East Iceland" },
-            { value: "west", label: "West Iceland" },
+            { value: "near-me", label: t('filters.nearMe') },
+            { value: "capital", label: t('filters.capitalArea') },
+            { value: "south", label: t('filters.southIceland') },
+            { value: "north", label: t('filters.northIceland') },
+            { value: "east", label: t('filters.eastIceland') },
+            { value: "west", label: t('filters.westIceland') },
           ],
         };
       case "Happy Hour Offers":
+      case happyHourOffers:
         return {
           when: [
-            { value: "now", label: "Now (Núna)" },
-            { value: "all-day", label: "All day (Í dag)" },
-            { value: "tonight", label: "Tonight (Í kvöld)" },
+            { value: "now", label: t('filters.nowIcelandic') },
+            { value: "all-day", label: t('filters.allDay') },
+            { value: "tonight", label: t('filters.tonightIcelandic') },
           ],
           location: [
-            { value: "near-me", label: "Near me" },
-            { value: "capital", label: "Capital area" },
-            { value: "south", label: "South Iceland" },
-            { value: "north", label: "North Iceland" },
-            { value: "east", label: "East Iceland" },
-            { value: "west", label: "West Iceland" },
+            { value: "near-me", label: t('filters.nearMe') },
+            { value: "capital", label: t('filters.capitalArea') },
+            { value: "south", label: t('filters.southIceland') },
+            { value: "north", label: t('filters.northIceland') },
+            { value: "east", label: t('filters.eastIceland') },
+            { value: "west", label: t('filters.westIceland') },
           ],
         };
       default:
@@ -153,10 +175,10 @@ export default function OfferFillter({
     if (!value) {
       // Show default labels for each filter type
       switch (filterType) {
-        case "sort": return "Sort";
-        case "when": return "When?";
-        case "category": return "Category";
-        case "location": return "Location";
+        case "sort": return t('filters.sort');
+        case "when": return t('filters.when');
+        case "category": return t('filters.category');
+        case "location": return t('filters.location');
         default: return filterType;
       }
     }

@@ -1,8 +1,10 @@
 'use client';
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslations } from 'next-intl';
 
 const AnimatedButton = ({ link }: { link: string }) => {
+  const t = useTranslations();
   const router = useRouter();
   return (
     <button onClick={() => router.push(link)} className="group  whitespace-nowrap overflow-hidden  w-full py-[0.6875rem] px-[1.5rem] rounded-[3.5rem] bg-card-background border border-primary hover:border-green-500 transition-all duration-100 cursor-pointer text-primary relative">
@@ -17,7 +19,7 @@ const AnimatedButton = ({ link }: { link: string }) => {
         />
         <div className="">
           <span className="text-lg lg:text-2xl font-semibold">
-            View offer
+            {t('common.viewOffer')}
           </span>
         </div>
         <Image
